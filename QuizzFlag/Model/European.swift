@@ -2,6 +2,6 @@ import Foundation
 
 
 
-final class EuropeanCountries {
-    
+final class European {
+    let countries: [Country] = [Albania(), Andorra(), Austria()]
 }

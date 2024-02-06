@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let europeanCountries = European().countries
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       test()
     }
-
+   
+    
+    func test() {
+        for country in europeanCountries {
+            print(country.name)
+        }
+    }
 
 }
 

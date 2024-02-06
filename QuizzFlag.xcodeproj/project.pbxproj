@@ -13,6 +13,9 @@
 		2955CA252B70F275001D7323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA232B70F275001D7323 /* Main.storyboard */; };
 		2955CA272B70F276001D7323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA262B70F276001D7323 /* Assets.xcassets */; };
 		2955CA2A2B70F276001D7323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA282B70F276001D7323 /* LaunchScreen.storyboard */; };
+		2955CA372B70F33F001D7323 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA362B70F33F001D7323 /* MainScreen.swift */; };
+		2955CA392B70F8E3001D7323 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA382B70F8E3001D7323 /* Countries.swift */; };
+		2955CA3B2B70FBF4001D7323 /* European.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA3A2B70FBF4001D7323 /* European.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		2955CA262B70F276001D7323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2955CA292B70F276001D7323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2955CA2B2B70F276001D7323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2955CA362B70F33F001D7323 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		2955CA382B70F8E3001D7323 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		2955CA3A2B70FBF4001D7323 /* European.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = European.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		2955CA1C2B70F275001D7323 /* QuizzFlag */ = {
 			isa = PBXGroup;
 			children = (
-				2955CA1D2B70F275001D7323 /* AppDelegate.swift */,
-				2955CA1F2B70F275001D7323 /* SceneDelegate.swift */,
-				2955CA212B70F275001D7323 /* ViewController.swift */,
-				2955CA232B70F275001D7323 /* Main.storyboard */,
-				2955CA262B70F276001D7323 /* Assets.xcassets */,
-				2955CA282B70F276001D7323 /* LaunchScreen.storyboard */,
+				2955CA352B70F29B001D7323 /* Additional Files */,
+				2955CA312B70F27B001D7323 /* Model */,
+				2955CA342B70F28D001D7323 /* Controller */,
+				2955CA322B70F281001D7323 /* View */,
 				2955CA2B2B70F276001D7323 /* Info.plist */,
 			);
 			path = QuizzFlag;
+			sourceTree = "<group>";
+		};
+		2955CA312B70F27B001D7323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2955CA362B70F33F001D7323 /* MainScreen.swift */,
+				2955CA382B70F8E3001D7323 /* Countries.swift */,
+				2955CA3A2B70FBF4001D7323 /* European.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2955CA322B70F281001D7323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2955CA232B70F275001D7323 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2955CA342B70F28D001D7323 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2955CA212B70F275001D7323 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2955CA352B70F29B001D7323 /* Additional Files */ = {
+			isa = PBXGroup;
+			children = (
+				2955CA282B70F276001D7323 /* LaunchScreen.storyboard */,
+				2955CA262B70F276001D7323 /* Assets.xcassets */,
+				2955CA1F2B70F275001D7323 /* SceneDelegate.swift */,
+				2955CA1D2B70F275001D7323 /* AppDelegate.swift */,
+			);
+			path = "Additional Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2955CA372B70F33F001D7323 /* MainScreen.swift in Sources */,
 				2955CA222B70F275001D7323 /* ViewController.swift in Sources */,
+				2955CA392B70F8E3001D7323 /* Countries.swift in Sources */,
 				2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */,
 				2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */,
+				2955CA3B2B70FBF4001D7323 /* European.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
