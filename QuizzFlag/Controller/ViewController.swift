@@ -8,17 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let europeanCountries = European().countries
+    let decoder = DecodingJSON()
+    var countries: [Country]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       test()
+       
+        loadCountries()
+        
     }
-   
-    
-    func test() {
-        for country in europeanCountries {
-            print(country.name)
+    func loadCountries() {
+        let decode = decoder.decode()
+        
+        switch decode {
+        case .success(let success):
+            countries = success.europe
+            for (i, country) in success.europe.enumerated() {
+                print("c'est le numéro \(i), et le pays est \(country.name) ")
+            }
+            print("Succeed")
+        case .failure:
+            print("it failed")
         }
     }
 
