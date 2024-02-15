@@ -9,22 +9,22 @@
 /* Begin PBXBuildFile section */
 		2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1D2B70F275001D7323 /* AppDelegate.swift */; };
 		2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1F2B70F275001D7323 /* SceneDelegate.swift */; };
-		2955CA222B70F275001D7323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA212B70F275001D7323 /* ViewController.swift */; };
-		2955CA252B70F275001D7323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA232B70F275001D7323 /* Main.storyboard */; };
+		2955CA222B70F275001D7323 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA212B70F275001D7323 /* MainScreenController.swift */; };
 		2955CA272B70F276001D7323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA262B70F276001D7323 /* Assets.xcassets */; };
 		2955CA2A2B70F276001D7323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2955CA282B70F276001D7323 /* LaunchScreen.storyboard */; };
 		2955CA372B70F33F001D7323 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA362B70F33F001D7323 /* MainScreen.swift */; };
 		2955CA3D2B7CCA32001D7323 /* JSONCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA3C2B7CCA32001D7323 /* JSONCountries.swift */; };
 		2955CA3F2B7CD067001D7323 /* DecodingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA3E2B7CD066001D7323 /* DecodingJSON.swift */; };
 		2955CA412B7CE82A001D7323 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA402B7CE82A001D7323 /* Model.swift */; };
+		29E820CB2B7E496800486BB0 /* QuizzPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E820CA2B7E496800486BB0 /* QuizzPage.swift */; };
+		29E820CD2B7E4DD600486BB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E820CC2B7E4DD600486BB0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2955CA1A2B70F275001D7323 /* QuizzFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2955CA1D2B70F275001D7323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2955CA1F2B70F275001D7323 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2955CA212B70F275001D7323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2955CA242B70F275001D7323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2955CA212B70F275001D7323 /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
 		2955CA262B70F276001D7323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2955CA292B70F276001D7323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2955CA2B2B70F276001D7323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +32,8 @@
 		2955CA3C2B7CCA32001D7323 /* JSONCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCountries.swift; sourceTree = "<group>"; };
 		2955CA3E2B7CD066001D7323 /* DecodingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingJSON.swift; sourceTree = "<group>"; };
 		2955CA402B7CE82A001D7323 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		29E820CA2B7E496800486BB0 /* QuizzPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzPage.swift; sourceTree = "<group>"; };
+		29E820CC2B7E4DD600486BB0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,7 @@
 		2955CA322B70F281001D7323 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2955CA232B70F275001D7323 /* Main.storyboard */,
+				29E820CC2B7E4DD600486BB0 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,7 +97,8 @@
 		2955CA342B70F28D001D7323 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2955CA212B70F275001D7323 /* ViewController.swift */,
+				2955CA212B70F275001D7323 /* MainScreenController.swift */,
+				29E820CA2B7E496800486BB0 /* QuizzPage.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,9 +172,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E820CD2B7E4DD600486BB0 /* Main.storyboard in Resources */,
 				2955CA2A2B70F276001D7323 /* LaunchScreen.storyboard in Resources */,
 				2955CA272B70F276001D7323 /* Assets.xcassets in Resources */,
-				2955CA252B70F275001D7323 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2955CA372B70F33F001D7323 /* MainScreen.swift in Sources */,
-				2955CA222B70F275001D7323 /* ViewController.swift in Sources */,
+				2955CA222B70F275001D7323 /* MainScreenController.swift in Sources */,
+				29E820CB2B7E496800486BB0 /* QuizzPage.swift in Sources */,
 				2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */,
 				2955CA3F2B7CD067001D7323 /* DecodingJSON.swift in Sources */,
 				2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */,
@@ -195,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2955CA232B70F275001D7323 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2955CA242B70F275001D7323 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2955CA282B70F276001D7323 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
