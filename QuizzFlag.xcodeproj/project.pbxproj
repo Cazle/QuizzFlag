@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29443A232B7F6B1000D72FC1 /* QuizzPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29443A222B7F6B1000D72FC1 /* QuizzPage.swift */; };
 		2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1D2B70F275001D7323 /* AppDelegate.swift */; };
 		2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1F2B70F275001D7323 /* SceneDelegate.swift */; };
 		2955CA222B70F275001D7323 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA212B70F275001D7323 /* MainScreenController.swift */; };
@@ -16,11 +17,12 @@
 		2955CA3D2B7CCA32001D7323 /* JSONCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA3C2B7CCA32001D7323 /* JSONCountries.swift */; };
 		2955CA3F2B7CD067001D7323 /* DecodingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA3E2B7CD066001D7323 /* DecodingJSON.swift */; };
 		2955CA412B7CE82A001D7323 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA402B7CE82A001D7323 /* Model.swift */; };
-		29E820CB2B7E496800486BB0 /* QuizzPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E820CA2B7E496800486BB0 /* QuizzPage.swift */; };
+		29E820CB2B7E496800486BB0 /* QuizzPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E820CA2B7E496800486BB0 /* QuizzPageController.swift */; };
 		29E820CD2B7E4DD600486BB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E820CC2B7E4DD600486BB0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29443A222B7F6B1000D72FC1 /* QuizzPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzPage.swift; sourceTree = "<group>"; };
 		2955CA1A2B70F275001D7323 /* QuizzFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2955CA1D2B70F275001D7323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2955CA1F2B70F275001D7323 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +34,7 @@
 		2955CA3C2B7CCA32001D7323 /* JSONCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCountries.swift; sourceTree = "<group>"; };
 		2955CA3E2B7CD066001D7323 /* DecodingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingJSON.swift; sourceTree = "<group>"; };
 		2955CA402B7CE82A001D7323 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		29E820CA2B7E496800486BB0 /* QuizzPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzPage.swift; sourceTree = "<group>"; };
+		29E820CA2B7E496800486BB0 /* QuizzPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzPageController.swift; sourceTree = "<group>"; };
 		29E820CC2B7E4DD600486BB0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				2955CA3E2B7CD066001D7323 /* DecodingJSON.swift */,
 				2955CA3C2B7CCA32001D7323 /* JSONCountries.swift */,
 				2955CA402B7CE82A001D7323 /* Model.swift */,
+				29443A222B7F6B1000D72FC1 /* QuizzPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2955CA212B70F275001D7323 /* MainScreenController.swift */,
-				29E820CA2B7E496800486BB0 /* QuizzPage.swift */,
+				29E820CA2B7E496800486BB0 /* QuizzPageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,7 +190,8 @@
 			files = (
 				2955CA372B70F33F001D7323 /* MainScreen.swift in Sources */,
 				2955CA222B70F275001D7323 /* MainScreenController.swift in Sources */,
-				29E820CB2B7E496800486BB0 /* QuizzPage.swift in Sources */,
+				29443A232B7F6B1000D72FC1 /* QuizzPage.swift in Sources */,
+				29E820CB2B7E496800486BB0 /* QuizzPageController.swift in Sources */,
 				2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */,
 				2955CA3F2B7CD067001D7323 /* DecodingJSON.swift in Sources */,
 				2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */,

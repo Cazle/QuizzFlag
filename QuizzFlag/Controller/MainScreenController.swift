@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainScreenController: UIViewController {
+final class MainScreenController: UIViewController {
     
     var buttonTitle: String?
     var continentModel: Model?
@@ -27,7 +27,6 @@ class MainScreenController: UIViewController {
     
     func loadingCountries() {
         let decoding = decoder.decode()
-        
         switch decoding {
             case .success(let success):
                 continentModel = success
@@ -39,19 +38,18 @@ class MainScreenController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let quizzController = segue.destination as? QuizzPage else { return }
-        
+        guard let quizzController = segue.destination as? QuizzPageController else { return }
+        guard let continent = continentModel else { return }
             
         switch buttonTitle {
         case "Europe":
-            quizzController.titleOfTheContinent = "Europe"
-            guard let continent = continentModel else { return }
-            quizzController.continentChosen = continent.europe
-            
+            quizzController.titleContinent = "Europe"
+            let randomCountries = continent.europe.shuffled()
+            quizzController.countries = randomCountries
         case "Amérique":
-            quizzController.titleOfTheContinent = "Amérique"
+            quizzController.titleContinent = "Amérique"
         default:
-            quizzController.titleOfTheContinent = "None"
+            quizzController.titleContinent = "None"
         }
     }
 }

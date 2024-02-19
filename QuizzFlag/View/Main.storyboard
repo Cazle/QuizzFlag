@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Quizz-->
         <scene sceneID="nqv-3X-8RC">
             <objects>
                 <navigationController id="Bhu-QA-ZvO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7Ky-dg-DFE"/>
+                    <tabBarItem key="tabBarItem" title="Quizz" id="7Ky-dg-DFE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nfe-v6-Ej8">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,36 +97,105 @@
             </objects>
             <point key="canvasLocation" x="871" y="-1138"/>
         </scene>
-        <!--Quizz Page-->
+        <!--Quizz Page Controller-->
         <scene sceneID="lWn-Sf-kN1">
             <objects>
-                <viewController id="hky-Nf-gim" customClass="QuizzPage" customModule="QuizzFlag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hky-Nf-gim" customClass="QuizzPageController" customModule="QuizzFlag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vcn-iR-EWf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-ev-0R5">
-                                <rect key="frame" x="138" y="396" width="117" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ContinentName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-ev-0R5">
+                                <rect key="frame" x="20" y="103" width="353" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="h95-8S-gzm">
+                                <rect key="frame" x="20" y="195" width="353" height="524"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQN-Gq-3f7">
+                                        <rect key="frame" x="30.666666666666657" y="0.0" width="292" height="191.66666666666666"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="LiW-ih-jLL">
+                                        <rect key="frame" x="40" y="332.66666666666663" width="273" height="191.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="xcB-FJ-yHp">
+                                                <rect key="frame" x="0.0" y="0.0" width="273" height="73"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eul-M6-tsn" userLabel="topLeftButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="73"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        <connections>
+                                                            <action selector="tapResponsesButtons:" destination="hky-Nf-gim" eventType="touchUpInside" id="pfw-HM-BIx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoP-JH-cyz" userLabel="topRightButton">
+                                                        <rect key="frame" x="165.66666666666666" y="0.0" width="107.33333333333334" height="73"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        <connections>
+                                                            <action selector="tapResponsesButtons:" destination="hky-Nf-gim" eventType="touchUpInside" id="7QQ-nG-3NX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-QK-q9g">
+                                                <rect key="frame" x="0.0" y="118" width="273" height="73.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTw-P7-j0z" userLabel="bottomLeftButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="73.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        <connections>
+                                                            <action selector="tapResponsesButtons:" destination="hky-Nf-gim" eventType="touchUpInside" id="Tb1-VB-AKo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8L-kD-e3Z" userLabel="bottomRightButton">
+                                                        <rect key="frame" x="165.66666666666666" y="0.0" width="107.33333333333334" height="73.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        <connections>
+                                                            <action selector="tapResponsesButtons:" destination="hky-Nf-gim" eventType="touchUpInside" id="3NO-Dc-ixO"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LiW-ih-jLL" secondAttribute="trailing" constant="40" id="1Mk-eK-rxu"/>
+                                    <constraint firstItem="LiW-ih-jLL" firstAttribute="leading" secondItem="h95-8S-gzm" secondAttribute="leading" constant="40" id="lA2-0n-P3a"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lYX-RS-tuj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Wid-ev-0R5" firstAttribute="centerY" secondItem="vcn-iR-EWf" secondAttribute="centerY" id="MpL-hD-YvN"/>
-                            <constraint firstItem="Wid-ev-0R5" firstAttribute="centerX" secondItem="vcn-iR-EWf" secondAttribute="centerX" id="Sea-Xa-Sug"/>
+                            <constraint firstItem="h95-8S-gzm" firstAttribute="leading" secondItem="lYX-RS-tuj" secondAttribute="leading" constant="20" id="2vh-92-z70"/>
+                            <constraint firstItem="Wid-ev-0R5" firstAttribute="top" secondItem="lYX-RS-tuj" secondAttribute="top" id="Chr-DK-GkD"/>
+                            <constraint firstItem="Wid-ev-0R5" firstAttribute="leading" secondItem="lYX-RS-tuj" secondAttribute="leading" constant="20" id="DxL-Wi-KYg"/>
+                            <constraint firstItem="lYX-RS-tuj" firstAttribute="bottom" secondItem="h95-8S-gzm" secondAttribute="bottom" constant="50" id="Lg2-Ry-K1t"/>
+                            <constraint firstItem="lYX-RS-tuj" firstAttribute="trailing" secondItem="h95-8S-gzm" secondAttribute="trailing" constant="20" id="P17-ly-4OB"/>
+                            <constraint firstItem="lYX-RS-tuj" firstAttribute="trailing" secondItem="Wid-ev-0R5" secondAttribute="trailing" constant="20" id="dF2-6o-s3g"/>
+                            <constraint firstItem="h95-8S-gzm" firstAttribute="top" secondItem="Wid-ev-0R5" secondAttribute="bottom" constant="50" id="vz8-5A-SRc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="waE-6u-0Ar"/>
                     <connections>
+                        <outlet property="currentFlagImageView" destination="XQN-Gq-3f7" id="xcz-66-rT8"/>
                         <outlet property="titleLabel" destination="Wid-ev-0R5" id="Tnl-Pd-QJc"/>
+                        <outletCollection property="allButtons" destination="Eul-M6-tsn" collectionClass="NSMutableArray" id="gR5-Ah-i05"/>
+                        <outletCollection property="allButtons" destination="CoP-JH-cyz" collectionClass="NSMutableArray" id="07Y-uk-8eV"/>
+                        <outletCollection property="allButtons" destination="tTw-P7-j0z" collectionClass="NSMutableArray" id="DDm-VG-5Wk"/>
+                        <outletCollection property="allButtons" destination="w8L-kD-e3Z" collectionClass="NSMutableArray" id="1JH-Aq-sIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xo-yW-7nD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744" y="-1138"/>
+            <point key="canvasLocation" x="1742.7480916030534" y="-1138.0281690140846"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BPk-fv-jox">
@@ -136,6 +205,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Bhu-QA-ZvO" kind="relationship" relationship="viewControllers" id="gfv-hU-vhV"/>
@@ -147,11 +217,11 @@
             </objects>
             <point key="canvasLocation" x="-1442" y="-334"/>
         </scene>
-        <!--Item-->
+        <!--Drapeaux-->
         <scene sceneID="Tb8-xJ-juB">
             <objects>
                 <navigationController id="peQ-TO-Vz8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fmj-tU-Evo"/>
+                    <tabBarItem key="tabBarItem" title="Drapeaux" id="fmj-tU-Evo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N2d-lo-nPD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,11 +231,11 @@
             </objects>
             <point key="canvasLocation" x="-19" y="-335"/>
         </scene>
-        <!--Item-->
+        <!--Succès-->
         <scene sceneID="c4C-9G-cnq">
             <objects>
                 <navigationController id="djJ-1N-2cp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Fr6-Jb-2ti"/>
+                    <tabBarItem key="tabBarItem" title="Succès" id="Fr6-Jb-2ti"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LSq-MN-r3x">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
