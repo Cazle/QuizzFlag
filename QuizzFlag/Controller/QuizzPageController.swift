@@ -10,11 +10,15 @@ final class QuizzPageController: UIViewController {
     var titleContinent: String?
     var lives = 3
     var numberOfTurn = 0
+    var timer: Timer?
     
+    @IBOutlet weak var progressBarView: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var currentFlagImageView: UIImageView!
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet weak var turnLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         setTheContinentName()
@@ -22,8 +26,10 @@ final class QuizzPageController: UIViewController {
     }
     
     func mainGame() {
-        checkIfTheGameIsFinished()
-        
+        if quizzPage.checkIfTheGameHasEnded(numberOfTurn: numberOfTurn, numberOfLives: lives) {
+            print("The game has ended in the main game !")
+        }
+        timerBar()
         settingTheResponses()
         
         let flag = quizzPage.getFilePathOfFlag(ofTheCurrentCountry: countries)
@@ -31,6 +37,7 @@ final class QuizzPageController: UIViewController {
         currentFlagImageView.image = image
         
         turnLabel.text = "Tour : \(numberOfTurn + 1)/10"
+        lifeLabel.text = "Vies : \(lives)/3"
         
     }
     
@@ -46,6 +53,11 @@ final class QuizzPageController: UIViewController {
         allButtons[3].setTitle(responses[3], for: .normal)
     }
     
+    @IBAction func tapBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        timer?.invalidate()
+    }
+    
     @IBAction func tapResponsesButtons(_ sender: UIButton) {
         
         guard countries != nil else { return }
@@ -53,13 +65,14 @@ final class QuizzPageController: UIViewController {
         guard let title = sender.titleLabel?.text else { return }
         
         if title == correctResponse {
-            countries?.remove(at: 0)
-            numberOfTurn += 1
-            mainGame()
+            relaunchTheTurn()
         } else {
-            checkIfTheGameIsFinished()
             lives -= 1
             print("Lives = \(lives)")
+            if quizzPage.checkIfTheGameHasEnded(numberOfTurn: numberOfTurn, numberOfLives: lives) {
+                print("game has ended !")
+            }
+            relaunchTheTurn()
         }
     }
     
@@ -67,10 +80,29 @@ final class QuizzPageController: UIViewController {
         guard let title = titleContinent else { return }
         titleLabel.text = title
     }
+    func relaunchTheTurn() {
+        countries?.remove(at: 0)
+        numberOfTurn += 1
+        mainGame()
+    }
     
-    func checkIfTheGameIsFinished() {
-        if numberOfTurn == 10 || lives == 0 {
-            print("Do something to finish the game")
+    func timerBar() {
+        var progress: Float = 0.0
+        progressBarView.progress = progress
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] timer in
+            
+            progress += 0.1
+            
+            self?.progressBarView.progress = progress
+            
+            if self?.progressBarView.progress == 1 {
+                print ("10 sec")
+                progress = 0.0
+                self?.lives -= 1
+                self?.relaunchTheTurn()
+                timer.invalidate()
+            }
         }
     }
 }

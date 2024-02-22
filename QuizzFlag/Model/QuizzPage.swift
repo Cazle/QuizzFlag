@@ -28,4 +28,12 @@ final class QuizzPage {
         
         return flag
     }
+    
+    func checkIfTheGameHasEnded(numberOfTurn: Int, numberOfLives: Int) -> Bool {
+        
+        if numberOfTurn == 10 || numberOfLives == 0 {
+            return true
+        }
+        return false
+    }
 }
