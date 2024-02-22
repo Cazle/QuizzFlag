@@ -11,8 +11,9 @@ final class MainScreenController: UIViewController {
     
     var buttonTitle: String?
     var continentModel: Model?
-    
     let decoder = DecodingJSON()
+    
+    @IBOutlet weak var backGroundImage: UIImageView!
     
     override func viewDidLoad() {
         loadingCountries()
@@ -44,8 +45,13 @@ final class MainScreenController: UIViewController {
         switch buttonTitle {
         case "Europe":
             quizzController.titleContinent = "Europe"
+            
             let randomCountries = continent.europe.shuffled()
-            quizzController.countries = randomCountries
+            let getTenCountries = Array(randomCountries.prefix(10))
+            quizzController.countries = getTenCountries
+            
+            let nameOfCountries = continent.europe.map {$0.name}.shuffled()
+            quizzController.countryNames = nameOfCountries
         case "Amérique":
             quizzController.titleContinent = "Amérique"
         default:

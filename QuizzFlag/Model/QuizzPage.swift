@@ -3,17 +3,29 @@ import Foundation
 final class QuizzPage {
     
     
-    func getTheCorrectResponse() {
+    func getTheCorrectResponse(ofTheCurrentCountry: [Country]?) -> String {
+        guard let country = ofTheCurrentCountry?.first else { return "" }
         
+        return country.name
     }
     
-    // Permet d'avoir un array de 4 réponses, dont la bonne, et de manière aléatoire
-    func getFourResponses(countries: [Country], correctResponse: String) -> [String] {
-        let names = countries.map { $0.name }
-        let namesWithoutCorrectResponse = names.filter {$0 != correctResponse}
-        var getThreeWrongAnswers = Array(namesWithoutCorrectResponse.prefix(3))
-        getThreeWrongAnswers.append(correctResponse)
-        let finalArrayOfResponses = getThreeWrongAnswers.shuffled()
+    func getFourResponses(fakeResponses: [String], correctResponse: String) -> [String] {
+        
+        let namesWithoutCorrectResponse = fakeResponses.filter {$0 != correctResponse}
+        
+        var getThreeWrongResponses = Array(namesWithoutCorrectResponse.prefix(3))
+        
+        getThreeWrongResponses.append(correctResponse)
+        
+        let finalArrayOfResponses = getThreeWrongResponses.shuffled()
+        
         return finalArrayOfResponses
+    }
+    
+    func getFilePathOfFlag(ofTheCurrentCountry: [Country]?) -> String {
+        guard let country = ofTheCurrentCountry?.first else { return "" }
+        let flag = country.flag
+        
+        return flag
     }
 }
