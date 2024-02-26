@@ -8,8 +8,6 @@ final class QuizzPageController: UIViewController {
     var countryNames: [String]?
     
     var titleContinent: String?
-    var lives = 3
-    var numberOfTurn = 0
     var timer: Timer?
     
     @IBOutlet weak var progressBarView: UIProgressView!
@@ -21,36 +19,27 @@ final class QuizzPageController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        setTheContinentName()
+        titleLabel.text = quizzPage.setContinentName(name: titleContinent)
         mainGame()
     }
     
     func mainGame() {
-        if quizzPage.checkIfTheGameHasEnded(numberOfTurn: numberOfTurn, numberOfLives: lives) {
+        if quizzPage.checkIfTheGameHasEnded() {
             print("The game has ended in the main game !")
         }
+        timer?.invalidate()
         timerBar()
-        settingTheResponses()
+
+        let responsesToDisplay = quizzPage.settingFourResponses(countries: countries, countryNames: countryNames)
+        for (index, button) in allButtons.enumerated() {
+            button.setTitle(responsesToDisplay[index], for: .normal)
+        }
         
         let flag = quizzPage.getFilePathOfFlag(ofTheCurrentCountry: countries)
         guard let image = UIImage(named: flag) else { return }
         currentFlagImageView.image = image
         
-        turnLabel.text = "Tour : \(numberOfTurn + 1)/10"
-        lifeLabel.text = "Vies : \(lives)/3"
-        
-    }
-    
-    
-    func settingTheResponses() {
-        let correctResponse = quizzPage.getTheCorrectResponse(ofTheCurrentCountry: countries)
-        guard let restOfResponses = countryNames?.shuffled() else { return }
-        let responses = quizzPage.getFourResponses(fakeResponses: restOfResponses, correctResponse: correctResponse)
-        
-        allButtons[0].setTitle(responses[0], for: .normal)
-        allButtons[1].setTitle(responses[1], for: .normal)
-        allButtons[2].setTitle(responses[2], for: .normal)
-        allButtons[3].setTitle(responses[3], for: .normal)
+        updatingTheLabels()
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
@@ -67,22 +56,14 @@ final class QuizzPageController: UIViewController {
         if title == correctResponse {
             relaunchTheTurn()
         } else {
-            lives -= 1
-            print("Lives = \(lives)")
-            if quizzPage.checkIfTheGameHasEnded(numberOfTurn: numberOfTurn, numberOfLives: lives) {
-                print("game has ended !")
-            }
+            quizzPage.lives -= 1
             relaunchTheTurn()
         }
     }
     
-    func setTheContinentName() {
-        guard let title = titleContinent else { return }
-        titleLabel.text = title
-    }
     func relaunchTheTurn() {
         countries?.remove(at: 0)
-        numberOfTurn += 1
+        quizzPage.numberOfTurn += 1
         mainGame()
     }
     
@@ -99,10 +80,15 @@ final class QuizzPageController: UIViewController {
             if self?.progressBarView.progress == 1 {
                 print ("10 sec")
                 progress = 0.0
-                self?.lives -= 1
+                self?.quizzPage.lives -= 1
                 self?.relaunchTheTurn()
                 timer.invalidate()
             }
         }
+    }
+    
+    func updatingTheLabels() {
+        turnLabel.text = quizzPage.settingTurn()
+        lifeLabel.text = quizzPage.settingLives()
     }
 }
