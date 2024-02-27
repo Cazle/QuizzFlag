@@ -9,7 +9,6 @@ final class QuizzPage {
     
     var winMessage = "Tu as gagné ! Félicitations !"
     var loseMessage = "Tu as perdu..."
-    var discoveredFlags = "You have discovered some flags !"
     
     enum stateOfThegame {
         case win
@@ -75,5 +74,9 @@ final class QuizzPage {
     func addingCountryForCorrectResponse(addingCountryFrom: [Country]?){
         guard let countryToAdd = addingCountryFrom?.first else { return }
         guessedCountries?.append(countryToAdd)
+    }
+    
+    func discoveryMessage() -> String {
+        return "Tu as découvert \(guessedCountries?.count ?? 0) nouveaux drapeaux, regarde la liste des drapeaux pour voir ce que tu as gagné !"
     }
 }

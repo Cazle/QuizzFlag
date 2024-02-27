@@ -112,10 +112,11 @@ final class QuizzPageController: UIViewController {
     func checkIfTheGameHasEnded() {
         switch quizzPage.checkTheStateOfTheGame() {
         case .win:
-            print(quizzPage.guessedCountries?.count ?? "")
-            timer?.invalidate()
+                timer?.invalidate()
                 displayGameOver()
                 gameOverLabel.text = quizzPage.winMessage
+                numberOfFlagsAddedLabel.isHidden = false
+                numberOfFlagsAddedLabel.text = quizzPage.discoveryMessage()
         case .lose:
             timer?.invalidate()
                 displayGameOver()
@@ -140,5 +141,4 @@ final class QuizzPageController: UIViewController {
             button.tintColor = .systemBlue
         }
     }
-    
 }
