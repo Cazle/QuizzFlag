@@ -10,12 +10,21 @@ final class QuizzPageController: UIViewController {
     var titleContinent: String?
     var timer: Timer?
     
-    @IBOutlet weak var progressBarView: UIProgressView!
+    @IBOutlet weak var quizzScreenStackView: UIStackView!
+    @IBOutlet weak var gameOverScreen: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var currentFlagImageView: UIImageView!
-    @IBOutlet var allButtons: [UIButton]!
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var gameOverLabel: UILabel!
+    @IBOutlet weak var numberOfFlagsAddedLabel: UILabel!
+    
+    
+    @IBOutlet weak var currentFlagImageView: UIImageView!
+    @IBOutlet weak var progressBarView: UIProgressView!
+    
+    @IBOutlet weak var nextFlagButtonView: UIButton!
+    @IBOutlet var allButtons: [UIButton]!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,12 +33,10 @@ final class QuizzPageController: UIViewController {
     }
     
     func mainGame() {
-        if quizzPage.checkIfTheGameHasEnded() {
-            print("The game has ended in the main game !")
-        }
-        timer?.invalidate()
         timerBar()
-
+        checkIfTheGameHasEnded()
+        updatingTheLabels()
+        
         let responsesToDisplay = quizzPage.settingFourResponses(countries: countries, countryNames: countryNames)
         for (index, button) in allButtons.enumerated() {
             button.setTitle(responsesToDisplay[index], for: .normal)
@@ -38,8 +45,6 @@ final class QuizzPageController: UIViewController {
         let flag = quizzPage.getFilePathOfFlag(ofTheCurrentCountry: countries)
         guard let image = UIImage(named: flag) else { return }
         currentFlagImageView.image = image
-        
-        updatingTheLabels()
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
@@ -54,14 +59,22 @@ final class QuizzPageController: UIViewController {
         guard let title = sender.titleLabel?.text else { return }
         
         if title == correctResponse {
+            quizzPage.addingCountryForCorrectResponse(addingCountryFrom: countries)
             relaunchTheTurn()
         } else {
-            quizzPage.lives -= 1
-            relaunchTheTurn()
+            timer?.invalidate()
+            coloringTheCorrectResponse(correctResponse: correctResponse)
+            nextFlagButtonView.isHidden = false
         }
+    }
+    @IBAction func nextFlagButton(_ sender: Any) {
+        resettingTheButtonsColorToNormal()
+        quizzPage.lives -= 1
+        relaunchTheTurn()
     }
     
     func relaunchTheTurn() {
+        timer?.invalidate()
         countries?.remove(at: 0)
         quizzPage.numberOfTurn += 1
         mainGame()
@@ -91,4 +104,41 @@ final class QuizzPageController: UIViewController {
         turnLabel.text = quizzPage.settingTurn()
         lifeLabel.text = quizzPage.settingLives()
     }
+    
+    func displayGameOver() {
+        gameOverScreen.isHidden = false
+    }
+    
+    func checkIfTheGameHasEnded() {
+        switch quizzPage.checkTheStateOfTheGame() {
+        case .win:
+            print(quizzPage.guessedCountries?.count ?? "")
+            timer?.invalidate()
+                displayGameOver()
+                gameOverLabel.text = quizzPage.winMessage
+        case .lose:
+            timer?.invalidate()
+                displayGameOver()
+                numberOfFlagsAddedLabel.isHidden = true
+                gameOverLabel.text = quizzPage.loseMessage
+        case .ongoing:
+            break
+        }
+    }
+    
+    func coloringTheCorrectResponse(correctResponse: String) {
+        for button in allButtons {
+            if button.titleLabel?.text == correctResponse {
+                button.tintColor = .green
+            } else {
+                button.tintColor = .red
+            }
+        }
+    }
+    func resettingTheButtonsColorToNormal() {
+        for button in allButtons {
+            button.tintColor = .systemBlue
+        }
+    }
+    
 }

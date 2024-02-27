@@ -47,8 +47,8 @@ final class MainScreenController: UIViewController {
             quizzController.titleContinent = "Europe"
             
             let randomCountries = continent.europe.shuffled()
-            let getTenCountries = Array(randomCountries.prefix(10))
-            quizzController.countries = getTenCountries
+            let getElevenCountries = Array(randomCountries.prefix(11))
+            quizzController.countries = getElevenCountries
             
             let nameOfCountries = continent.europe.map {$0.name}.shuffled()
             quizzController.countryNames = nameOfCountries

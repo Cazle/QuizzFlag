@@ -2,10 +2,20 @@ import Foundation
 
 final class QuizzPage {
     
-    
     var titleOfTheContinent: String?
     var lives = 3
     var numberOfTurn = 0
+    var guessedCountries: [Country]? = []
+    
+    var winMessage = "Tu as gagné ! Félicitations !"
+    var loseMessage = "Tu as perdu..."
+    var discoveredFlags = "You have discovered some flags !"
+    
+    enum stateOfThegame {
+        case win
+        case lose
+        case ongoing
+    }
     
     func getTheCorrectResponse(ofTheCurrentCountry: [Country]?) -> String {
         guard let country = ofTheCurrentCountry?.first else { return "" }
@@ -39,12 +49,15 @@ final class QuizzPage {
         return flag
     }
     
-    func checkIfTheGameHasEnded() -> Bool {
+    func checkTheStateOfTheGame() -> stateOfThegame {
         
-        if numberOfTurn == 10 || lives == 0 {
-            return true
+        if numberOfTurn == 10 {
+            return .win
         }
-        return false
+        if lives == 0 {
+            return .lose
+        }
+        return .ongoing
     }
     
     func setContinentName(name: String?) -> String? {
@@ -57,5 +70,10 @@ final class QuizzPage {
     
     func settingTurn() -> String {
         return "Tour : \(numberOfTurn + 1)/10"
+    }
+    
+    func addingCountryForCorrectResponse(addingCountryFrom: [Country]?){
+        guard let countryToAdd = addingCountryFrom?.first else { return }
+        guessedCountries?.append(countryToAdd)
     }
 }
