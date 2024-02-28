@@ -4,13 +4,13 @@ import UIKit
 final class QuizzPageController: UIViewController {
     
     let quizzEngine = QuizzEngine()
+    let timerComponent = TimerComponent()
+    
     var countries: [Country]?
     var countryNames: [String]?
-    
     var titleContinent: String?
-    var timerComponent = TimerComponent()
     
-    @IBOutlet weak var quizzScreenStackView: UIStackView!
+    
     @IBOutlet weak var gameOverScreen: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -83,20 +83,22 @@ final class QuizzPageController: UIViewController {
     
     func timerBar() {
         
+        let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
+        
         var progress: Float = 0.0
         progressBarView.progress = progress
         
         timerComponent.timer {
             
-            self.progressBarView.progress = progress
             progress += 0.1
+            self.progressBarView.progress = progress
             
             print("Progress = \(progress)")
             if self.progressBarView.progress == 1 {
                 self.timerComponent.stopTheTimer()
+                self.coloringTheCorrectResponse(correctResponse: correctResponse)
                 progress = 0.0
-                self.quizzEngine.lives -= 1
-                self.relaunchTheTurn()
+                self.nextFlagButtonView.isHidden = false
                 
             }
         }
@@ -132,6 +134,7 @@ final class QuizzPageController: UIViewController {
     
     func coloringTheCorrectResponse(correctResponse: String) {
         for button in allButtons {
+            button.isUserInteractionEnabled = false
             if button.titleLabel?.text == correctResponse {
                 button.tintColor = .green
             } else {
@@ -139,8 +142,10 @@ final class QuizzPageController: UIViewController {
             }
         }
     }
+    
     func resettingTheButtonsColorToNormal() {
         for button in allButtons {
+            button.isUserInteractionEnabled = true
             button.tintColor = .systemBlue
         }
     }

@@ -24,7 +24,7 @@ final class QuizzEngine {
     
     func getFourResponses(fakeResponses: [String], correctResponse: String) -> [String] {
         
-        let namesWithoutCorrectResponse = fakeResponses.filter {$0 != correctResponse}
+        let namesWithoutCorrectResponse = fakeResponses.filter {$0 != correctResponse}.shuffled()
         var getThreeWrongResponses = Array(namesWithoutCorrectResponse.prefix(3))
         
         getThreeWrongResponses.append(correctResponse)
