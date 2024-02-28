@@ -1,6 +1,4 @@
-import Foundation
 
-let JSONCountries = """
 {
     "europe": [
         {
@@ -334,4 +332,3 @@ let JSONCountries = """
         },
     ]
 }
-"""

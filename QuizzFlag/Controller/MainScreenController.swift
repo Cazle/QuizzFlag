@@ -11,7 +11,7 @@ final class MainScreenController: UIViewController {
     
     var buttonTitle: String?
     var continentModel: Model?
-    let decoder = DecodingJSON()
+    let decoder = JSONMapper()
     
     @IBOutlet weak var backGroundImage: UIImageView!
     

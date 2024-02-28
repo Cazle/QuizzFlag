@@ -1,6 +1,6 @@
 import Foundation
 
-final class QuizzPage {
+final class QuizzEngine {
     
     var titleOfTheContinent: String?
     var lives = 3
