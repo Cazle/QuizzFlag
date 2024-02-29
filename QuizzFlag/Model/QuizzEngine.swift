@@ -22,20 +22,25 @@ final class QuizzEngine {
         return country.name
     }
     
-    func getFourResponses(fakeResponses: [String], correctResponse: String) -> [String] {
+    private func getFourResponses(fakeResponses: [String], correctResponse: String) -> [String] {
         
         let namesWithoutCorrectResponse = fakeResponses.filter {$0 != correctResponse}.shuffled()
+        
         var getThreeWrongResponses = Array(namesWithoutCorrectResponse.prefix(3))
         
         getThreeWrongResponses.append(correctResponse)
+        
         let finalArrayOfResponses = getThreeWrongResponses.shuffled()
         
         return finalArrayOfResponses
     }
     
     func settingFourResponses(countries: [Country]?, countryNames: [String]?) -> [String] {
+        
         let correctResponse = getTheCorrectResponse(ofTheCurrentCountry: countries)
+        
         guard let restOfResponses = countryNames?.shuffled() else { return [] }
+  
         let responses = getFourResponses(fakeResponses: restOfResponses, correctResponse: correctResponse)
         
         return responses
