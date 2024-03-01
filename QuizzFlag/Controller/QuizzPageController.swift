@@ -5,10 +5,12 @@ final class QuizzPageController: UIViewController {
     
     let quizzEngine = QuizzEngine()
     let timerComponent = TimerComponent()
+    let coreDataManager = CoreDataManager()
     
     var countries: [Country]?
     var countryNames: [String]?
     var titleContinent: String?
+    var fetchedCountries: [CountryEntity]?
     
     
     @IBOutlet weak var gameOverScreen: UIView!
@@ -28,11 +30,78 @@ final class QuizzPageController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        fetchingCountries()
         titleLabel.text = quizzEngine.setContinentName(name: titleContinent)
         mainGame()
     }
+    @IBAction func tapDelete(_ sender: Any) {
+        deletingAllCountries()
+    }
+}
+// MARK: - IBActions of the quizz
+    extension QuizzPageController {
+    
+    @IBAction func tapBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+        //Temporary deleting all function
+ 
+        timerComponent.stopTheTimer()
+    }
+        
+    
+    @IBAction func tapResponsesButtons(_ sender: UIButton) {
+        
+        guard countries != nil else { return }
+        let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
+        guard let title = sender.titleLabel?.text else { return }
+        
+        if title == correctResponse {
+            checkingBeforeAddingCountry(countryName: correctResponse)
+            relaunchTheTurn()
+        } else {
+            timerComponent.stopTheTimer()
+            coloringTheCorrectResponse(correctResponse: correctResponse)
+            nextFlagButtonView.isHidden = false
+        }
+    }
+    
+    @IBAction func nextFlagButton(_ sender: Any) {
+        nextFlagButtonView.isHidden = true
+        resettingTheButtonsColorToNormal()
+        quizzEngine.lives -= 1
+        relaunchTheTurn()
+    }
+}
+
+// MARK: - Style of buttons and handling them
+
+extension QuizzPageController {
+    
+    func coloringTheCorrectResponse(correctResponse: String) {
+        for button in allButtons {
+            button.isUserInteractionEnabled = false
+            if button.titleLabel?.text == correctResponse {
+                button.tintColor = .green
+            } else {
+                button.tintColor = .red
+            }
+        }
+    }
+    
+    func resettingTheButtonsColorToNormal() {
+        for button in allButtons {
+            button.isUserInteractionEnabled = true
+            button.tintColor = .systemBlue
+        }
+    }
+}
+// MARK: - Main methods for the quizz
+
+extension QuizzPageController {
     
     func mainGame() {
+        fetchingCountries()
         timerBar()
         checkIfTheGameHasEnded()
         updatingTheLabels()
@@ -45,40 +114,6 @@ final class QuizzPageController: UIViewController {
         let flag = quizzEngine.getFilePathOfFlag(ofTheCurrentCountry: countries)
         guard let image = UIImage(named: flag) else { return }
         currentFlagImageView.image = image
-    }
-    
-    @IBAction func tapBackButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        timerComponent.stopTheTimer()
-    }
-    
-    @IBAction func tapResponsesButtons(_ sender: UIButton) {
-        
-        guard countries != nil else { return }
-        let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
-        guard let title = sender.titleLabel?.text else { return }
-        
-        if title == correctResponse {
-            quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
-            relaunchTheTurn()
-        } else {
-            timerComponent.stopTheTimer()
-            coloringTheCorrectResponse(correctResponse: correctResponse)
-            nextFlagButtonView.isHidden = false
-        }
-    }
-    @IBAction func nextFlagButton(_ sender: Any) {
-        nextFlagButtonView.isHidden = true
-        resettingTheButtonsColorToNormal()
-        quizzEngine.lives -= 1
-        relaunchTheTurn()
-    }
-    
-    func relaunchTheTurn() {
-        timerComponent.stopTheTimer()
-        countries?.remove(at: 0)
-        quizzEngine.numberOfTurn += 1
-        mainGame()
     }
     
     func timerBar() {
@@ -104,6 +139,12 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    func relaunchTheTurn() {
+        timerComponent.stopTheTimer()
+        countries?.remove(at: 0)
+        quizzEngine.numberOfTurn += 1
+        mainGame()
+    }
     
     func updatingTheLabels() {
         turnLabel.text = quizzEngine.settingTurn()
@@ -115,38 +156,72 @@ final class QuizzPageController: UIViewController {
     }
     
     func checkIfTheGameHasEnded() {
+        
+        guard let guessedCountries = quizzEngine.guessedCountries else { return }
+        
         switch quizzEngine.checkTheStateOfTheGame() {
         case .win:
             timerComponent.stopTheTimer()
-                displayGameOver()
-                gameOverLabel.text = quizzEngine.winMessage
-                numberOfFlagsAddedLabel.isHidden = false
-                numberOfFlagsAddedLabel.text = quizzEngine.discoveryMessage()
+            addingAllTheCountriesDiscovered(countriesDiscovered: guessedCountries)
+            displayGameOver()
+            gameOverLabel.text = quizzEngine.winMessage
+            numberOfFlagsAddedLabel.isHidden = false
+            numberOfFlagsAddedLabel.text = quizzEngine.discoveryMessage()
         case .lose:
             timerComponent.stopTheTimer()
-                displayGameOver()
-                numberOfFlagsAddedLabel.isHidden = true
-                gameOverLabel.text = quizzEngine.loseMessage
+            displayGameOver()
+            numberOfFlagsAddedLabel.isHidden = true
+            gameOverLabel.text = quizzEngine.loseMessage
         case .ongoing:
             break
         }
     }
+}
+
+//MARK: - CoreData methods
+
+extension QuizzPageController {
     
-    func coloringTheCorrectResponse(correctResponse: String) {
-        for button in allButtons {
-            button.isUserInteractionEnabled = false
-            if button.titleLabel?.text == correctResponse {
-                button.tintColor = .green
-            } else {
-                button.tintColor = .red
+    func fetchingCountries() {
+        do {
+          fetchedCountries = try coreDataManager.fetchingCountries()
+            print(fetchedCountries?.count)
+        } catch {
+            print("Error from fetched")
+        }
+    }
+    
+    func checkingBeforeAddingCountry(countryName: String) {
+        if coreDataManager.countryIsExisting(named: countryName) == false {
+            quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
+        }
+    }
+    
+    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) {
+        
+        for country in countriesDiscovered {
+            let _ = coreDataManager.unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.flagHistory, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital)
+        }
+        do {
+            try coreDataManager.savingContext()
+        } catch {
+            print("Error from saving")
+        }
+    }
+    
+    func deletingAllCountries() {
+        
+        guard let countriesToDelete = fetchedCountries else { return }
+        
+        for countries in countriesToDelete {
+            coreDataManager.deletingCountry(deleting: countries)
+            do {
+                try coreDataManager.savingContext()
+            } catch {
+                print("Error deleting")
             }
         }
+       
     }
     
-    func resettingTheButtonsColorToNormal() {
-        for button in allButtons {
-            button.isUserInteractionEnabled = true
-            button.tintColor = .systemBlue
-        }
-    }
 }

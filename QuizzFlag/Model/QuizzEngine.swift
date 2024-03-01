@@ -2,6 +2,8 @@ import Foundation
 
 final class QuizzEngine {
     
+    let coreDataManager = CoreDataManager()
+    
     var titleOfTheContinent: String?
     var lives = 3
     var numberOfTurn = 0
