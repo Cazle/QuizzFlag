@@ -7,6 +7,7 @@ final class QuizzPageController: UIViewController {
     let timerComponent = TimerComponent()
     let coreDataManager = CoreDataManager()
     
+    
     var countries: [Country]?
     var countryNames: [String]?
     var titleContinent: String?
@@ -43,9 +44,6 @@ final class QuizzPageController: UIViewController {
     
     @IBAction func tapBackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
-        //Temporary deleting all function
- 
         timerComponent.stopTheTimer()
     }
         
@@ -185,7 +183,6 @@ extension QuizzPageController {
     func fetchingCountries() {
         do {
           fetchedCountries = try coreDataManager.fetchingCountries()
-            print(fetchedCountries?.count)
         } catch {
             print("Error from fetched")
         }
@@ -200,7 +197,7 @@ extension QuizzPageController {
     func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) {
         
         for country in countriesDiscovered {
-            let _ = coreDataManager.unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.flagHistory, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital)
+            let _ = coreDataManager.unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.flagHistory, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
         }
         do {
             try coreDataManager.savingContext()
@@ -215,11 +212,11 @@ extension QuizzPageController {
         
         for countries in countriesToDelete {
             coreDataManager.deletingCountry(deleting: countries)
-            do {
-                try coreDataManager.savingContext()
-            } catch {
-                print("Error deleting")
-            }
+        }
+        do {
+            try coreDataManager.savingContext()
+        } catch {
+            print("Error deleting")
         }
        
     }

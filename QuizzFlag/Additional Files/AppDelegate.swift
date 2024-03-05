@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data
     
+   
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "QuizzFlag")
         
@@ -79,4 +81,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+
+/* public extension NSManagedObject {
+
+    convenience init(context: NSManagedObjectContext) {
+        let name = String(describing: type(of: self))
+        let entity = NSEntityDescription.entity(forEntityName: name, in: context)!
+        self.init(entity: entity, insertInto: context)
+    }
+ 
+} */
 

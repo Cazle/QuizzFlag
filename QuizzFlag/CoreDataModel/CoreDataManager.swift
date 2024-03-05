@@ -9,8 +9,7 @@ final class CoreDataManager {
         self.context = context
     }
     
-    
-    func unlockNewCountries(guessedCountryIn: [Country]?, name: String, history: String, flag: String, coatOfArms: String, capital: String) -> CountryEntity {
+    func unlockNewCountries(guessedCountryIn: [Country]?, name: String, history: String, flag: String, coatOfArms: String, capital: String, continent: String) -> CountryEntity {
         
         context.performAndWait {
             
@@ -20,6 +19,7 @@ final class CoreDataManager {
             newCountry.flag = flag
             newCountry.coatOfArms = coatOfArms
             newCountry.capital = capital
+            newCountry.continent = continent
             
             return newCountry
         }

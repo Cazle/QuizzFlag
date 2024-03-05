@@ -9,6 +9,7 @@ final class ListOfCountryController: UIViewController {
     let listOfCountryCell = ListOfCountryCell()
     var coreDataManager = CoreDataManager()
     var storedCountries: [CountryEntity]?
+    var selectedCountry: CountryEntity?
     
     override func viewWillAppear(_ animated: Bool) {
       fetchingCountries()
@@ -22,9 +23,25 @@ final class ListOfCountryController: UIViewController {
             print("error from the tableview")
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "listToDescription", let destination = segue.destination as? CountryDescription else { return }
+        destination.countryToShow = selectedCountry
+    }
 }
 
 extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let storedCountries = storedCountries else { return }
+        let currentCountry = storedCountries[indexPath.row]
+        selectedCountry = currentCountry
+        
+        print(selectedCountry?.name)
+        print(selectedCountry?.capital)
+        
+        performSegue(withIdentifier: "listToDescription", sender: self)
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

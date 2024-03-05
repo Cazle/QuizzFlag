@@ -3,6 +3,7 @@
     <entity name="CountryEntity" representedClassName="CountryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="capital" optional="YES" attributeType="String"/>
         <attribute name="coatOfArms" optional="YES" attributeType="String"/>
+        <attribute name="continent" optional="YES" attributeType="String"/>
         <attribute name="flag" optional="YES" attributeType="String"/>
         <attribute name="history" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>

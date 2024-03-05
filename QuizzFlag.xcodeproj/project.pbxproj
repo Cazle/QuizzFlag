@@ -22,6 +22,7 @@
 		295CF9DE2B90C4350028C01D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CF9DD2B90C4350028C01D /* CoreDataManager.swift */; };
 		2978E9C62B8F3FA0006FC046 /* JSONCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 2978E9C52B8F3FA0006FC046 /* JSONCountries.json */; };
 		2978E9CA2B8F4A4B006FC046 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978E9C92B8F4A4B006FC046 /* TimerComponent.swift */; };
+		29A5A2542B9734280046A8C4 /* CountryDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A2532B9734280046A8C4 /* CountryDescription.swift */; };
 		29E820CB2B7E496800486BB0 /* QuizzPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E820CA2B7E496800486BB0 /* QuizzPageController.swift */; };
 		29E820CD2B7E4DD600486BB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E820CC2B7E4DD600486BB0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		295CF9DD2B90C4350028C01D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2978E9C52B8F3FA0006FC046 /* JSONCountries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONCountries.json; sourceTree = "<group>"; };
 		2978E9C92B8F4A4B006FC046 /* TimerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
+		29A5A2532B9734280046A8C4 /* CountryDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDescription.swift; sourceTree = "<group>"; };
 		29E820CA2B7E496800486BB0 /* QuizzPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzPageController.swift; sourceTree = "<group>"; };
 		29E820CC2B7E4DD600486BB0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				2955CA212B70F275001D7323 /* MainScreenController.swift */,
 				29E820CA2B7E496800486BB0 /* QuizzPageController.swift */,
 				295CF9D42B90C0670028C01D /* ListOfCountryController.swift */,
+				29A5A2532B9734280046A8C4 /* CountryDescription.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */,
 				295CF9DE2B90C4350028C01D /* CoreDataManager.swift in Sources */,
 				2955CA3F2B7CD067001D7323 /* JSONMapper.swift in Sources */,
+				29A5A2542B9734280046A8C4 /* CountryDescription.swift in Sources */,
 				2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */,
 				295CF9D52B90C0670028C01D /* ListOfCountryController.swift in Sources */,
 				295CF9D72B90C1D60028C01D /* ListOfCountryCell.swift in Sources */,

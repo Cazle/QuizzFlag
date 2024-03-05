@@ -6,329 +6,376 @@
             "flag": "Albanie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Albanie.png",
-            "capital": "Tirana"
+            "capital": "Tirana",
+            "continent": "Europe"
         },
         {
             "name": "Andorre",
             "flag": "Andorre.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Andorre.png",
-            "capital": "Andorre-La-Vieille"
+            "capital": "Andorre-La-Vieille",
+            "continent": "Europe"
         },
         {
             "name": "Autriche",
             "flag": "Autriche.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Autriche.png",
-            "capital": "Vienne"
+            "capital": "Vienne",
+            "continent": "Europe"
         },
         {
             "name": "Bielorussie",
             "flag": "Bielorussie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Bielorussie.png",
-            "capital": "Minsk"
+            "capital": "Minsk",
+            "continent": "Europe"
         },
         {
             "name": "Belgique",
             "flag": "Belgique.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Belgique.png",
-            "capital": "Bruxelles"
+            "capital": "Bruxelles",
+            "continent": "Europe"
         },
         {
             "name": "Bosnie-Herzégovine",
             "flag": "BH.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_BH.png",
-            "capital": "Sarajevo"
+            "capital": "Sarajevo",
+            "continent": "Europe"
         },
         {
             "name": "Bulgarie",
             "flag": "Bulgarie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Bulgarie.png",
-            "capital": "Sofia"
+            "capital": "Sofia",
+            "continent": "Europe"
         },
         {
             "name": "Croatie",
             "flag": "Croatie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Croatie.png",
-            "capital": "Zagreb"
+            "capital": "Zagreb",
+            "continent": "Europe"
         },
         {
             "name": "République Tchèque",
             "flag": "RC.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_RC.png",
-            "capital": "Tirana"
+            "capital": "Tirana",
+            "continent": "Europe"
         },
         {
             "name": "Danemark",
             "flag": "Danemark.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Danemark.png",
-            "capital": "Copenhague"
+            "capital": "Copenhague",
+            "continent": "Europe"
         },
         {
             "name": "Estonie",
             "flag": "Estonie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Estonie.png",
-            "capital": "Tallinn"
+            "capital": "Tallinn",
+            "continent": "Europe"
         },
         {
             "name": "Finlande",
             "flag": "Finlande.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Finlande.png",
-            "capital": "Helsinki"
+            "capital": "Helsinki",
+            "continent": "Europe"
         },
         {
             "name": "France",
             "flag": "France.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_France.png",
-            "capital": "Paris"
+            "capital": "Paris",
+            "continent": "Europe"
         },
         {
             "name": "Georgie",
             "flag": "Georgie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Georgie.png",
-            "capital": "Tbilissi"
+            "capital": "Tbilissi",
+            "continent": "Europe"
         },
         {
             "name": "Allemagne",
             "flag": "Allemagne.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Allemagne.png",
-            "capital": "Berlin"
+            "capital": "Berlin",
+            "continent": "Europe"
         },
         {
             "name": "Grèce",
             "flag": "Grèce.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Grèce.png",
-            "capital": "Athènes"
+            "capital": "Athènes",
+            "continent": "Europe"
         },
         {
             "name": "Hongrie",
             "flag": "Hongrie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Hongrie.png",
-            "capital": "Budapest"
+            "capital": "Budapest",
+            "continent": "Europe"
         },
         {
             "name": "Islande",
             "flag": "Islande.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Islande.png",
-            "capital": "Reykjavik"
+            "capital": "Reykjavik",
+            "continent": "Europe"
         },
         {
             "name": "Irlande",
             "flag": "Irlande.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Irlande.png",
-            "capital": "Dublin"
+            "capital": "Dublin",
+            "continent": "Europe"
         },
         {
             "name": "Italie",
             "flag": "Italie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Italie.png",
-            "capital": "Rome"
+            "capital": "Rome",
+            "continent": "Europe"
         },
         {
             "name": "Kosovo",
             "flag": "Kosovo.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Kosovo.png",
-            "capital": "Pristina"
+            "capital": "Pristina",
+            "continent": "Europe"
         },
         {
             "name": "Lettonie",
             "flag": "Lettonie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Lettonie.png",
-            "capital": "Riga"
+            "capital": "Riga",
+            "continent": "Europe"
         },
         {
             "name": "Liechtenstein",
             "flag": "Liechtenstein.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Liechtenstein.png",
-            "capital": "Vaduz"
+            "capital": "Vaduz",
+            "continent": "Europe"
         },
         {
             "name": "Lituanie",
             "flag": "Lituanie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Lituanie.png",
-            "capital": "Vilnius"
+            "capital": "Vilnius",
+            "continent": "Europe"
         },
         {
             "name": "Luxembourg",
             "flag": "Luxembourg.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Luxembourg.png",
-            "capital": "Luxembourg"
+            "capital": "Luxembourg",
+            "continent": "Europe"
         },
         {
             "name": "Malte",
             "flag": "Malte.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Malte.png",
-            "capital": "La Valette"
+            "capital": "La Valette",
+            "continent": "Europe"
         },
         {
             "name": "Moldavie",
             "flag": "Moldavie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Moldavie.png",
-            "capital": "Chișinău"
+            "capital": "Chișinău",
+            "continent": "Europe"
         },
         {
             "name": "Monaco",
             "flag": "Monaco.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Monaco.png",
-            "capital": "Monaco"
+            "capital": "Monaco",
+            "continent": "Europe"
         },
         {
             "name": "Montenegro",
             "flag": "Montenegro.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Montenegro.png",
-            "capital": "Podgorica"
+            "capital": "Podgorica",
+            "continent": "Europe"
         },
         {
             "name": "Pays-Bas",
             "flag": "PB.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_PB.png",
-            "capital": "Amsterdam"
+            "capital": "Amsterdam",
+            "continent": "Europe"
         },
         {
             "name": "Macédoine du Nord",
             "flag": "MDN.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_MDN.png",
-            "capital": "Skopje"
+            "capital": "Skopje",
+            "continent": "Europe"
         },
         {
             "name": "Norvège",
             "flag": "Norvège.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Norvège.png",
-            "capital": "Oslo"
+            "capital": "Oslo",
+            "continent": "Europe"
         },
         {
             "name": "Pologne",
             "flag": "Pologne.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Pologne.png",
-            "capital": "Varsovie"
+            "capital": "Varsovie",
+            "continent": "Europe"
         },
         {
             "name": "Portugal",
             "flag": "Portugal.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Portugal.png",
-            "capital": "Lisbonne"
+            "capital": "Lisbonne",
+            "continent": "Europe"
         },
         {
             "name": "Roumanie",
             "flag": "Roumanie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Roumanie.png",
-            "capital": "Bucarest"
+            "capital": "Bucarest",
+            "continent": "Europe"
         },
         {
             "name": "Russie",
             "flag": "Russie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Russie.png",
-            "capital": "Moscou"
+            "capital": "Moscou",
+            "continent": "Europe"
         },
         {
             "name": "Saint-Marin",
             "flag": "SM.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_SM.png",
-            "capital": "Saint-Marin"
+            "capital": "Saint-Marin",
+            "continent": "Europe"
         },
         {
             "name": "Serbie",
             "flag": "Serbie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Serbie.png",
-            "capital": "Belgrade"
+            "capital": "Belgrade",
+            "continent": "Europe"
         },
         {
             "name": "Slovaquie",
             "flag": "Slovaquie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Slovaquie.png",
-            "capital": "Bratislava"
+            "capital": "Bratislava",
+            "continent": "Europe"
         },
         {
             "name": "Slovénie",
             "flag": "Slovénie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Slovénie.png",
-            "capital": "Ljubljana"
+            "capital": "Ljubljana",
+            "continent": "Europe"
         },
         {
             "name": "Espagne",
             "flag": "Espagne.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Espagne.png",
-            "capital": "Madrid"
+            "capital": "Madrid",
+            "continent": "Europe"
         },
         {
             "name": "Suède",
             "flag": "Suède.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Suède.png",
-            "capital": "Stockholm"
+            "capital": "Stockholm",
+            "continent": "Europe"
         },
         {
             "name": "Suisse",
             "flag": "Suisse.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Suisse.png",
-            "capital": "Berne"
+            "capital": "Berne",
+            "continent": "Europe"
         },
         {
             "name": "Turquie",
             "flag": "Turquie.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Turquie.png",
-            "capital": "Ankara"
+            "capital": "Ankara",
+            "continent": "Europe"
         },
         {
             "name": "Ukraine",
             "flag": "Ukraine.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Ukraine.png",
-            "capital": "Kiev"
+            "capital": "Kiev",
+            "continent": "Europe"
         },
         {
             "name": "Royaume-Uni",
             "flag": "UK.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_UK.png",
-            "capital": "Londres"
+            "capital": "Londres",
+            "continent": "Europe"
         },
         {
             "name": "Vatican",
             "flag": "Vatican.png",
             "flagHistory": "Histoire",
             "coatOfArms": "COA_Vatican.png",
-            "capital": "Vatican"
+            "capital": "Vatican",
+            "continent": "Europe"
         },
     ]
 }

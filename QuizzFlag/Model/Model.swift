@@ -10,6 +10,7 @@ struct Country: Decodable {
     let flagHistory: String
     let coatOfArms: String
     let capital: String
+    let continent: String
 }
 
 
