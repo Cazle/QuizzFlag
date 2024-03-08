@@ -16,12 +16,12 @@ final class MainScreenController: UIViewController {
     let decoder = JSONMapper()
     let coreDataManager = CoreDataManager()
     
-    
-    @IBOutlet weak var backGroundImage: UIImageView!
+    @IBOutlet weak var mainButtonsView: UIView!
     
     override func viewDidLoad() {
         loadingCountries()
         fetchingCountriesFromCoreData()
+        design()
     }
    
     
@@ -86,6 +86,10 @@ final class MainScreenController: UIViewController {
         default:
             quizzController.titleContinent = "None"
         }
+    }
+    
+    func design() {
+        mainButtonsView.layer.cornerRadius = 30
     }
 }
 

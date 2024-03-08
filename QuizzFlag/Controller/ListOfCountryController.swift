@@ -35,12 +35,8 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
         guard let storedCountries = storedCountries else { return }
         let currentCountry = storedCountries[indexPath.row]
         selectedCountry = currentCountry
-        
-        print(selectedCountry?.name)
-        print(selectedCountry?.capital)
-        
+    
         performSegue(withIdentifier: "listToDescription", sender: self)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
