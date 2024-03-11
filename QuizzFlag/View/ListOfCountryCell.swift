@@ -4,6 +4,7 @@ import UIKit
 final class ListOfCountryCell: UITableViewCell {
     
     
+    @IBOutlet weak var purlpleViewCell: UIView!
     @IBOutlet weak var flagView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -17,5 +18,7 @@ final class ListOfCountryCell: UITableViewCell {
         let image = UIImage(named: flagPath)
         
         flagView.image = image
+        
+        purlpleViewCell.layer.cornerRadius = 30
     }
 }

@@ -115,11 +115,11 @@ final class QuizzPageController: UIViewController {
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
         
         var progress: Float = 0.0
-        
-        progressBarView.progress =  progress
+      
+        progressBarView.progress = progress
         
         timerComponent.timer {
-            progress += 0.1
+            progress += 0.01
             self.progressBarView.setProgress(progress, animated: true)
             
             if self.progressBarView.progress == 1 {

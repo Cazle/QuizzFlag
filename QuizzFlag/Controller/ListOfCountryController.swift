@@ -5,11 +5,16 @@ final class ListOfCountryController: UIViewController {
     
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var purpleViewCell: UIView!
     
     let listOfCountryCell = ListOfCountryCell()
     var coreDataManager = CoreDataManager()
     var storedCountries: [CountryEntity]?
     var selectedCountry: CountryEntity?
+    
+    override func viewDidLoad() {
+        settingBackgroundImage()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
       fetchingCountries()
@@ -24,8 +29,11 @@ final class ListOfCountryController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "listToDescription", let destination = segue.destination as? CountryDescription else { return }
+        guard segue.identifier == "listToDescription", let destination = segue.destination as? CountryDescriptionController else { return }
         destination.countryToShow = selectedCountry
+    }
+    func settingBackgroundImage() {
+        tableView.backgroundView = UIImageView(image: UIImage(named: "List_Description.png"))
     }
 }
 
@@ -41,7 +49,7 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let allCountries = storedCountries else { return 0}
+        guard let allCountries = storedCountries else { return 0 }
         return allCountries.count
     }
     

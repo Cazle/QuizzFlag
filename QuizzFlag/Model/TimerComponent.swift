@@ -5,7 +5,7 @@ final class TimerComponent {
     private var timer: Timer?
     
     func timer(completion: @escaping () -> Void) {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {timer in
             completion()
         }
     }
