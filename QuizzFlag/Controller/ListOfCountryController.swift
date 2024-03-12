@@ -33,7 +33,7 @@ final class ListOfCountryController: UIViewController {
         destination.countryToShow = selectedCountry
     }
     func settingBackgroundImage() {
-        tableView.backgroundView = UIImageView(image: UIImage(named: "List_Description.png"))
+        tableView.backgroundView = UIImageView(image: UIImage(named: "CountryDescription.png"))
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290FD2C92BA055D300DD12E7 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290FD2C82BA055D300DD12E7 /* NSManagedObjectExtension.swift */; };
 		29443A232B7F6B1000D72FC1 /* QuizzEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29443A222B7F6B1000D72FC1 /* QuizzEngine.swift */; };
 		2955CA1E2B70F275001D7323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1D2B70F275001D7323 /* AppDelegate.swift */; };
 		2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA1F2B70F275001D7323 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290FD2C82BA055D300DD12E7 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		29443A222B7F6B1000D72FC1 /* QuizzEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzEngine.swift; sourceTree = "<group>"; };
 		2955CA1A2B70F275001D7323 /* QuizzFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2955CA1D2B70F275001D7323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				295CF9DD2B90C4350028C01D /* CoreDataManager.swift */,
+				290FD2C82BA055D300DD12E7 /* NSManagedObjectExtension.swift */,
 			);
 			path = CoreDataModel;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				2955CA3F2B7CD067001D7323 /* JSONMapper.swift in Sources */,
 				29A5A2542B9734280046A8C4 /* CountryDescriptionController.swift in Sources */,
 				2955CA202B70F275001D7323 /* SceneDelegate.swift in Sources */,
+				290FD2C92BA055D300DD12E7 /* NSManagedObjectExtension.swift in Sources */,
 				295CF9D52B90C0670028C01D /* ListOfCountryController.swift in Sources */,
 				295CF9D72B90C1D60028C01D /* ListOfCountryCell.swift in Sources */,
 				2978E9CA2B8F4A4B006FC046 /* TimerComponent.swift in Sources */,

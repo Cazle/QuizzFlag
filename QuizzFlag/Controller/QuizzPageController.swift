@@ -32,7 +32,7 @@ final class QuizzPageController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        mainViewDesign()
+        multipleDesigns()
         fetchingCountries()
         titleLabel.text = quizzEngine.setContinentName(name: titleContinent)
         mainGame()
@@ -88,8 +88,9 @@ final class QuizzPageController: UIViewController {
         }
     }
     
-    func mainViewDesign() {
+    func multipleDesigns() {
         mainView.layer.cornerRadius = 30
+        gameOverScreen.layer.cornerRadius = 30
     }
     
     // MARK: - Main methods for the quizz
@@ -147,6 +148,7 @@ final class QuizzPageController: UIViewController {
     func displayGameOver() {
         gameOverScreen.isHidden = false
         mainView.isHidden = true
+        titleLabel.isHidden = true
     }
     
     func checkIfTheGameHasEnded() {
