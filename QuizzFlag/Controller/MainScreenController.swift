@@ -18,9 +18,12 @@ final class MainScreenController: UIViewController {
     
     @IBOutlet weak var mainButtonsView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchingCountriesFromCoreData()
+    }
+    
     override func viewDidLoad() {
         loadingCountries()
-        fetchingCountriesFromCoreData()
         design()
     }
    
@@ -30,15 +33,17 @@ final class MainScreenController: UIViewController {
         buttonTitle = getNameFromButton
         performSegue(withIdentifier: "goToQuizz", sender: self)
     }
+    
     @IBAction func tapResetFlags(_ sender: Any) {
-        deletingAllCountries()
+        guard let countriesToDelete = countriesEntity else { return }
+        coreDataManager.deletingAllCountries(countriesToDelete: countriesToDelete)
     }
     
     func loadingCountries() {
         let decoding = decoder.decode()
         switch decoding {
-            case .success(let success):
-                continentModel = success
+        case .success(let success):
+            continentModel = success
         case .failure(let error):
             print("This \(error) occured.")
             
@@ -52,20 +57,6 @@ final class MainScreenController: UIViewController {
         }
     }
     
-    func deletingAllCountries() {
-        
-        guard let countriesToDelete = countriesEntity else { return }
-        
-        for countries in countriesToDelete {
-            coreDataManager.deletingCountry(deleting: countries)
-        }
-        do {
-            try coreDataManager.savingContext()
-        } catch {
-            print("Error deleting")
-        }
-       
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let quizzController = segue.destination as? QuizzPageController else { return }

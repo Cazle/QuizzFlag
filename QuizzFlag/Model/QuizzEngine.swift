@@ -3,11 +3,13 @@ import Foundation
 final class QuizzEngine {
     
     let coreDataManager = CoreDataManager()
-    
+    let timerComponent = TimerComponent()
+
     var titleOfTheContinent: String?
     var lives = 3
     var numberOfTurn = 0
     var guessedCountries: [Country]? = []
+ 
     
     var winMessage = "Tu as gagné ! Félicitations !"
     var loseMessage = "Tu as perdu..."
@@ -50,6 +52,7 @@ final class QuizzEngine {
     
     func getFilePathOfFlag(ofTheCurrentCountry: [Country]?) -> String {
         guard let country = ofTheCurrentCountry?.first else { return "" }
+        
         let flag = country.flag
         
         return flag
@@ -84,6 +87,11 @@ final class QuizzEngine {
     }
     
     func discoveryMessage() -> String {
-        return "Tu as découvert \(guessedCountries?.count ?? 0) nouveaux drapeaux, regarde la liste des drapeaux pour voir ce que tu as gagné !"
+        return "Nouveaux drapeaux découverts : \(guessedCountries?.count ?? 0)"
+    }
+    func checkingBeforeAddingCountry(countryName: String, countries: [Country]?) {
+        if coreDataManager.countryIsExisting(named: countryName) == false {
+            addingCountryForCorrectResponse(addingCountryFrom: countries)
+        }
     }
 }

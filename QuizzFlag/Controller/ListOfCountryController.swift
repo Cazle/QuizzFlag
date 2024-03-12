@@ -28,10 +28,12 @@ final class ListOfCountryController: UIViewController {
             print("error from the tableview")
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "listToDescription", let destination = segue.destination as? CountryDescriptionController else { return }
         destination.countryToShow = selectedCountry
     }
+    
     func settingBackgroundImage() {
         tableView.backgroundView = UIImageView(image: UIImage(named: "CountryDescription.png"))
     }

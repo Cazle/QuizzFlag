@@ -52,7 +52,7 @@ final class QuizzPageController: UIViewController {
         guard let title = sender.titleLabel?.text else { return }
         
         if title == correctResponse {
-            checkingBeforeAddingCountry(countryName: correctResponse)
+            quizzEngine.checkingBeforeAddingCountry(countryName: correctResponse, countries: countries)
             relaunchTheTurn()
         } else {
             timerComponent.stopTheTimer()
@@ -122,6 +122,7 @@ final class QuizzPageController: UIViewController {
         timerComponent.timer {
             progress += 0.01
             self.progressBarView.setProgress(progress, animated: true)
+            print(progress)
             
             if self.progressBarView.progress == 1 {
                 self.timerComponent.stopTheTimer()
@@ -158,7 +159,7 @@ final class QuizzPageController: UIViewController {
         switch quizzEngine.checkTheStateOfTheGame() {
         case .win:
             timerComponent.stopTheTimer()
-            addingAllTheCountriesDiscovered(countriesDiscovered: guessedCountries)
+            coreDataManager.addingAllTheCountriesDiscovered(countriesDiscovered: guessedCountries)
             displayGameOver()
             gameOverLabel.text = quizzEngine.winMessage
             numberOfFlagsAddedLabel.isHidden = false
@@ -181,39 +182,6 @@ final class QuizzPageController: UIViewController {
         } catch {
             print("Error from fetched")
         }
-    }
-    
-    func checkingBeforeAddingCountry(countryName: String) {
-        if coreDataManager.countryIsExisting(named: countryName) == false {
-            quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
-        }
-    }
-    
-    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) {
-        
-        for country in countriesDiscovered {
-            let _ = coreDataManager.unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.flagHistory, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
-        }
-        do {
-            try coreDataManager.savingContext()
-        } catch {
-            print("Error from saving")
-        }
-    }
-    
-    func deletingAllCountries() {
-        
-        guard let countriesToDelete = fetchedCountries else { return }
-        
-        for countries in countriesToDelete {
-            coreDataManager.deletingCountry(deleting: countries)
-        }
-        do {
-            try coreDataManager.savingContext()
-        } catch {
-            print("Error deleting")
-        }
-        
     }
 }
 
