@@ -15,6 +15,7 @@ final class MainScreenController: UIViewController {
     
     let decoder = JSONMapper()
     let coreDataManager = CoreDataManager()
+    let mainScreenEngine = MainScreenEngine()
     
     @IBOutlet weak var mainButtonsView: UIView!
     
@@ -65,30 +66,24 @@ final class MainScreenController: UIViewController {
         switch buttonTitle {
         case "Europe":
             quizzController.titleContinent = "Europe"
-            let randomCountries = continent.europe.shuffled()
-            let getElevenCountries = Array(randomCountries.prefix(11))
-            quizzController.countries = getElevenCountries
-            
-            let nameOfCountries = continent.europe.map {$0.name}.shuffled()
-            quizzController.countryNames = nameOfCountries
+            quizzController.countries = mainScreenEngine.randomizingCountries(countries: continent.europe)
+            quizzController.countryNames = mainScreenEngine.randomizingCountriesNames(names: continent.europe)
         case "Amérique":
             quizzController.titleContinent = "Amérique"
-           
-            let randomCountries = continent.amerique.shuffled()
-            let getElevenCountries = Array(randomCountries.prefix(11))
-            quizzController.countries = getElevenCountries
-            
-            let nameOfCountries = continent.amerique.map {$0.name}.shuffled()
-            quizzController.countryNames = nameOfCountries
+            quizzController.countries = mainScreenEngine.randomizingCountries(countries: continent.amerique)
+            quizzController.countryNames = mainScreenEngine.randomizingCountriesNames(names: continent.amerique)
         case "Asie":
             quizzController.titleContinent = "Asie"
-           
-            let randomCountries = continent.asie.shuffled()
-            let getElevenCountries = Array(randomCountries.prefix(11))
-            quizzController.countries = getElevenCountries
-            
-            let nameOfCountries = continent.asie.map {$0.name}.shuffled()
-            quizzController.countryNames = nameOfCountries
+            quizzController.countries = mainScreenEngine.randomizingCountries(countries: continent.asie)
+            quizzController.countryNames = mainScreenEngine.randomizingCountriesNames(names: continent.asie)
+        case "Afrique":
+            quizzController.titleContinent = "Afrique"
+            quizzController.countries = mainScreenEngine.randomizingCountries(countries: continent.afrique)
+            quizzController.countryNames = mainScreenEngine.randomizingCountriesNames(names: continent.afrique)
+        case "Océanie":
+            quizzController.titleContinent = "Océanie"
+            quizzController.countries = mainScreenEngine.randomizingCountries(countries: continent.oceanie)
+            quizzController.countryNames = mainScreenEngine.randomizingCountriesNames(names: continent.oceanie)
         default:
             quizzController.titleContinent = "None"
         }

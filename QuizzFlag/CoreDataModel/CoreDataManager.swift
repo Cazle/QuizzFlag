@@ -60,7 +60,7 @@ final class CoreDataManager {
     func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) {
         
         for country in countriesDiscovered {
-            let _ = unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.flagHistory, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
+            let _ = unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.history, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
         }
         do {
             try savingContext()

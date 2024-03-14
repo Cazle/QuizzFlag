@@ -5,10 +5,10 @@ final class ListOfCountryController: UIViewController {
     
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var purpleViewCell: UIView!
     
     let listOfCountryCell = ListOfCountryCell()
-    var coreDataManager = CoreDataManager()
+    let coreDataManager = CoreDataManager()
+
     var storedCountries: [CountryEntity]?
     var selectedCountry: CountryEntity?
     
@@ -17,7 +17,8 @@ final class ListOfCountryController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      fetchingCountries()
+        fetchingCountries()
+       
     }
     
     func fetchingCountries() {

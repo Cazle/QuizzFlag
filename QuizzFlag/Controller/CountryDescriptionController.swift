@@ -31,4 +31,12 @@ final class CountryDescriptionController: UIViewController {
         capitalNameLabel.text = country.capital
         
     }
+    
+    @IBAction func tapToGoWebsite(_ sender: Any) {
+        guard let receivedUrl = countryToShow?.history else { return }
+        
+        guard let url = URL(string: receivedUrl) else { return }
+        
+        UIApplication.shared.open(url)
+    }
 }
