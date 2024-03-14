@@ -65,7 +65,6 @@ final class MainScreenController: UIViewController {
         switch buttonTitle {
         case "Europe":
             quizzController.titleContinent = "Europe"
-            
             let randomCountries = continent.europe.shuffled()
             let getElevenCountries = Array(randomCountries.prefix(11))
             quizzController.countries = getElevenCountries
@@ -74,10 +73,27 @@ final class MainScreenController: UIViewController {
             quizzController.countryNames = nameOfCountries
         case "Amérique":
             quizzController.titleContinent = "Amérique"
+           
+            let randomCountries = continent.amerique.shuffled()
+            let getElevenCountries = Array(randomCountries.prefix(11))
+            quizzController.countries = getElevenCountries
+            
+            let nameOfCountries = continent.amerique.map {$0.name}.shuffled()
+            quizzController.countryNames = nameOfCountries
+        case "Asie":
+            quizzController.titleContinent = "Asie"
+           
+            let randomCountries = continent.asie.shuffled()
+            let getElevenCountries = Array(randomCountries.prefix(11))
+            quizzController.countries = getElevenCountries
+            
+            let nameOfCountries = continent.asie.map {$0.name}.shuffled()
+            quizzController.countryNames = nameOfCountries
         default:
             quizzController.titleContinent = "None"
         }
     }
+
     
     func design() {
         mainButtonsView.layer.cornerRadius = 30

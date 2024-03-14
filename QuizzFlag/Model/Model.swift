@@ -3,7 +3,10 @@ import Foundation
 
 struct Model: Decodable {
     let europe: [Country]
+    let amerique: [Country]
+    let asie: [Country]
 }
+
 struct Country: Decodable {
     let name: String
     let flag: String
