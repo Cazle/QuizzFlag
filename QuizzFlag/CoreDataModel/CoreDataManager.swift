@@ -25,7 +25,7 @@ final class CoreDataManager {
         }
     }
     
-    func fetchingCountries() throws -> [CountryEntity] {
+    func fetchCountries() throws -> [CountryEntity] {
         try context.performAndWait {
             try context.fetch(CountryEntity.fetchRequest())
         }
@@ -79,5 +79,4 @@ final class CoreDataManager {
             print("Error deleting")
         }
     }
-    
 }

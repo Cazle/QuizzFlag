@@ -37,6 +37,7 @@ final class QuizzPageController: UIViewController {
         titleLabel.text = quizzEngine.setContinentName(name: titleContinent)
         mainGame()
     }
+    
     // MARK: - IBActions of the quizz
     
     @IBAction func tapBackButton(_ sender: Any) {
@@ -52,7 +53,7 @@ final class QuizzPageController: UIViewController {
         guard let title = sender.titleLabel?.text else { return }
         
         if title == correctResponse {
-            quizzEngine.checkingBeforeAddingCountry(countryName: correctResponse, countries: countries)
+            checkingBeforeAddingCountry(countryName: correctResponse, countries: countries)
             relaunchTheTurn()
         } else {
             timerComponent.stopTheTimer()
@@ -178,9 +179,15 @@ final class QuizzPageController: UIViewController {
     
     func fetchingCountries() {
         do {
-            fetchedCountries = try coreDataManager.fetchingCountries()
+            fetchedCountries = try coreDataManager.fetchCountries()
         } catch {
-            print("Error from fetched")
+            presentAlert()
+        }
+    }
+    
+    func checkingBeforeAddingCountry(countryName: String, countries: [Country]?) {
+        if coreDataManager.countryIsExisting(named: countryName) == false {
+            quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
     }
 }

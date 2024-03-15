@@ -20,7 +20,7 @@ final class MainScreenController: UIViewController {
     @IBOutlet weak var mainButtonsView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchingCountriesFromCoreData()
+        fetchingCountries()
     }
     
     override func viewDidLoad() {
@@ -45,16 +45,15 @@ final class MainScreenController: UIViewController {
         switch decoding {
         case .success(let success):
             continentModel = success
-        case .failure(let error):
-            print("This \(error) occured.")
-            
+        case .failure(_):
+            presentAlert()
         }
     }
-    func fetchingCountriesFromCoreData() {
+    func fetchingCountries() {
         do {
-          countriesEntity = try coreDataManager.fetchingCountries()
+          countriesEntity = try coreDataManager.fetchCountries()
         } catch {
-            print("Error from fetched")
+            presentAlert()
         }
     }
     

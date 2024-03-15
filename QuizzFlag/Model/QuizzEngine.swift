@@ -1,9 +1,6 @@
 import Foundation
 
 final class QuizzEngine {
-    
-    let coreDataManager = CoreDataManager()
-    let timerComponent = TimerComponent()
 
     var titleOfTheContinent: String?
     var lives = 3
@@ -11,7 +8,7 @@ final class QuizzEngine {
     var guessedCountries: [Country]? = []
  
     
-    var winMessage = "Tu as gagné ! Félicitations !"
+    var winMessage = "Tu as gagné !"
     var loseMessage = "Tu as perdu..."
     
     enum stateOfThegame {
@@ -81,17 +78,12 @@ final class QuizzEngine {
         return "Tour : \(numberOfTurn + 1)/10"
     }
     
-    func addingCountryForCorrectResponse(addingCountryFrom: [Country]?){
-        guard let countryToAdd = addingCountryFrom?.first else { return }
-        guessedCountries?.append(countryToAdd)
-    }
-    
     func discoveryMessage() -> String {
         return "Nouveaux drapeaux découverts : \(guessedCountries?.count ?? 0)"
     }
-    func checkingBeforeAddingCountry(countryName: String, countries: [Country]?) {
-        if coreDataManager.countryIsExisting(named: countryName) == false {
-            addingCountryForCorrectResponse(addingCountryFrom: countries)
-        }
+    
+    func addingCountryForCorrectResponse(addingCountryFrom: [Country]?){
+        guard let countryToAdd = addingCountryFrom?.first else { return }
+        guessedCountries?.append(countryToAdd)
     }
 }

@@ -23,7 +23,7 @@ final class ListOfCountryController: UIViewController {
     
     func fetchingCountries() {
         do {
-            storedCountries = try coreDataManager.fetchingCountries()
+            storedCountries = try coreDataManager.fetchCountries()
             tableView.reloadData()
         } catch {
             print("error from the tableview")
