@@ -56,7 +56,7 @@ final class CoreDataManagerTests: XCTestCase {
     }
     
     func test_countryIsExistingAndReturnTrue() {
-        let countryToDelete = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let _ = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         
@@ -66,7 +66,7 @@ final class CoreDataManagerTests: XCTestCase {
     }
     
     func test_countryIsNotExistingAndReturnFalse() {
-        let countryToDelete = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let _ = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         

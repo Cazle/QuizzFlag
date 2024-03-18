@@ -117,10 +117,11 @@ final class QuizzPageController: UIViewController {
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
         
         var progress: Float = 0.0
-      
+        
         progressBarView.progress = progress
         
-        timerComponent.timer {
+        timerComponent.timer {[weak self] in
+            guard let self = self else { return }
             progress += 0.01
             self.progressBarView.setProgress(progress, animated: true)
             print(progress)
@@ -148,14 +149,15 @@ final class QuizzPageController: UIViewController {
     }
     
     func displayGameOver() {
+        timerComponent.stopTheTimer()
         gameOverScreen.isHidden = false
         mainView.isHidden = true
         titleLabel.isHidden = true
     }
     
     func checkIfTheGameHasEnded() {
-        
         guard let guessedCountries = quizzEngine.guessedCountries else { return }
+        
         switch quizzEngine.checkTheStateOfTheGame() {
         case .win:
             winningTheGame(withThoseCountryDiscovered: guessedCountries)
@@ -172,7 +174,6 @@ final class QuizzPageController: UIViewController {
         } catch {
             presentAlert()
         }
-        timerComponent.stopTheTimer()
         displayGameOver()
         gameOverLabel.text = quizzEngine.winMessage
         numberOfFlagsAddedLabel.isHidden = false
@@ -180,7 +181,6 @@ final class QuizzPageController: UIViewController {
     }
     
     func losingTheGame() {
-        timerComponent.stopTheTimer()
         displayGameOver()
         numberOfFlagsAddedLabel.isHidden = true
         gameOverLabel.text = quizzEngine.loseMessage
@@ -201,7 +201,6 @@ final class QuizzPageController: UIViewController {
             quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
     }
-   
 }
 
 

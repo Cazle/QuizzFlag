@@ -25,7 +25,7 @@ final class MainScreenController: UIViewController {
     
     override func viewDidLoad() {
         loadingCountries()
-        design()
+        setupUI()
     }
    
     
@@ -36,20 +36,17 @@ final class MainScreenController: UIViewController {
     }
     
     @IBAction func tapResetFlags(_ sender: Any) {
-        
         let alertVC = UIAlertController(title: "Supprimer", message: "Vous êtes sûr de vouloir reinitialiser vos dreapeaux à zéro ? Cette action est definitive. ", preferredStyle: UIAlertController.Style.alert)
         
         alertVC.addAction(UIAlertAction(title: "Non", style: UIAlertAction.Style.cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Oui", style: UIAlertAction.Style.destructive, handler:{ action in
+        alertVC.addAction(UIAlertAction(title: "Oui", style: UIAlertAction.Style.destructive, handler:{ [weak self] action in
             do {
-                guard let countriesToDelete = self.countriesEntity else { return }
-                try self.coreDataManager.deletingAllCountries(countriesToDelete: countriesToDelete)
+                guard let countriesToDelete = self?.countriesEntity else { return }
+                try self?.coreDataManager.deletingAllCountries(countriesToDelete: countriesToDelete)
             } catch {
-                self.presentAlert()
+                self?.presentAlert()
             }
-           
         }))
-        
         self.present(alertVC, animated: true, completion: nil)
     }
     
@@ -102,7 +99,7 @@ final class MainScreenController: UIViewController {
     }
 
     
-    func design() {
+    func setupUI() {
         mainButtonsView.layer.cornerRadius = 30
     }
 }

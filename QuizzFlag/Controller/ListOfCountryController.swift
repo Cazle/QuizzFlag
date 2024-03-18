@@ -8,7 +8,7 @@ final class ListOfCountryController: UIViewController {
     
     let listOfCountryCell = ListOfCountryCell()
     let coreDataManager = CoreDataManager()
-
+    
     var storedCountries: [CountryEntity]?
     var selectedCountry: CountryEntity?
     
@@ -18,7 +18,6 @@ final class ListOfCountryController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchingCountries()
-       
     }
     
     func fetchingCountries() {
@@ -46,7 +45,7 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
         guard let storedCountries = storedCountries else { return }
         let currentCountry = storedCountries[indexPath.row]
         selectedCountry = currentCountry
-    
+        
         performSegue(withIdentifier: "listToDescription", sender: self)
     }
     
@@ -71,5 +70,5 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-
+    
 }
