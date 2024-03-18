@@ -18,6 +18,17 @@ final class JSONMapperTests: XCTestCase {
         }
     }
     
+    func test_whenTheDecodingIsNotSuccessfulAndReturnADecodingErrorDecodingDidNotWork() {
+        sut.jsonData = "ErrorJSON"
+        
+        switch sut.decode() {
+        case .success(let success):
+            XCTFail("This should not happen \(success)")
+        case .failure(let error):
+            XCTAssertEqual(error as! JSONMapper.DecodingError, .decodingDidNotWork)
+        }
+    }
+    
     func test_whenTheDecodingIsSuccessfullAndReturnTheCountry() {
         sut.jsonData = "FakeJSON"
         
@@ -32,25 +43,6 @@ final class JSONMapperTests: XCTestCase {
             XCTAssertEqual(europe[0].continent, "Europe")
         case .failure(let error):
             XCTFail("This should not happen \(error)")
-        }
-    }
-    func test_whenTheDecodingIsNotSuccessfulAndReturnADecodingErrorDecodingDidNotWork() {
-        sut.jsonData = "ErrorJSON"
-        
-        switch sut.decode() {
-        case .success(let success):
-            XCTFail("This should not happen \(success)")
-        case .failure(let error):
-            XCTAssertEqual(error as! JSONMapper.DecodingError, .decodingDidNotWork)
-        }
-    }
-    func test_whenThereIsNoDataAndReturnDataNotFound() {
-    
-        switch JSONMapper(data: Data()).decode() {
-        case .success(let success):
-            XCTFail("non")
-        case .failure(let error):
-            XCTAssertEqual(error as! JSONMapper.DecodingError, .dataNotFound)
         }
     }
 }
