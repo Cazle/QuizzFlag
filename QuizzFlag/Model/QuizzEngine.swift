@@ -2,7 +2,6 @@ import Foundation
 
 final class QuizzEngine {
 
-    var titleOfTheContinent: String?
     var lives = 3
     var numberOfTurn = 0
     var guessedCountries: [Country]? = []

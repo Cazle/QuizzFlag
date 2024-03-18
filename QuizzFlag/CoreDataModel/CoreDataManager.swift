@@ -57,26 +57,18 @@ final class CoreDataManager {
         return isExisting
     }
     
-    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) {
+    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) throws{
         
         for country in countriesDiscovered {
             let _ = unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.history, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
         }
-        do {
-            try savingContext()
-        } catch {
-            print("Error from saving")
-        }
+        try savingContext()
     }
     
-    func deletingAllCountries(countriesToDelete: [CountryEntity]) {
+    func deletingAllCountries(countriesToDelete: [CountryEntity]) throws {
         for countries in countriesToDelete {
             deletingCountry(deleting: countries)
         }
-        do {
-            try savingContext()
-        } catch {
-            print("Error deleting")
-        }
+        try savingContext()
     }
 }

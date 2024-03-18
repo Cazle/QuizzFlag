@@ -32,7 +32,7 @@ final class QuizzPageController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        multipleDesigns()
+        setupUI()
         fetchingCountries()
         titleLabel.text = quizzEngine.setContinentName(name: titleContinent)
         mainGame()
@@ -89,7 +89,7 @@ final class QuizzPageController: UIViewController {
         }
     }
     
-    func multipleDesigns() {
+    func setupUI() {
         mainView.layer.cornerRadius = 30
         gameOverScreen.layer.cornerRadius = 30
     }
@@ -156,23 +156,34 @@ final class QuizzPageController: UIViewController {
     func checkIfTheGameHasEnded() {
         
         guard let guessedCountries = quizzEngine.guessedCountries else { return }
-        
         switch quizzEngine.checkTheStateOfTheGame() {
         case .win:
-            timerComponent.stopTheTimer()
-            coreDataManager.addingAllTheCountriesDiscovered(countriesDiscovered: guessedCountries)
-            displayGameOver()
-            gameOverLabel.text = quizzEngine.winMessage
-            numberOfFlagsAddedLabel.isHidden = false
-            numberOfFlagsAddedLabel.text = quizzEngine.discoveryMessage()
+            winningTheGame(withThoseCountryDiscovered: guessedCountries)
         case .lose:
-            timerComponent.stopTheTimer()
-            displayGameOver()
-            numberOfFlagsAddedLabel.isHidden = true
-            gameOverLabel.text = quizzEngine.loseMessage
+            losingTheGame()
         case .ongoing:
             break
         }
+    }
+    
+    func winningTheGame(withThoseCountryDiscovered: [Country]) {
+        do {
+            try coreDataManager.addingAllTheCountriesDiscovered(countriesDiscovered: withThoseCountryDiscovered)
+        } catch {
+            presentAlert()
+        }
+        timerComponent.stopTheTimer()
+        displayGameOver()
+        gameOverLabel.text = quizzEngine.winMessage
+        numberOfFlagsAddedLabel.isHidden = false
+        numberOfFlagsAddedLabel.text = quizzEngine.discoveryMessage()
+    }
+    
+    func losingTheGame() {
+        timerComponent.stopTheTimer()
+        displayGameOver()
+        numberOfFlagsAddedLabel.isHidden = true
+        gameOverLabel.text = quizzEngine.loseMessage
     }
     
     //MARK: - CoreData methods
@@ -190,6 +201,7 @@ final class QuizzPageController: UIViewController {
             quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
     }
+   
 }
 
 

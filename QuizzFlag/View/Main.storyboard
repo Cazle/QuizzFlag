@@ -130,10 +130,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpW-V0-qZh" userLabel="settingsButton">
-                                <rect key="frame" x="326" y="103" width="51" height="34.333333333333343"/>
+                                <rect key="frame" x="329" y="103" width="48" height="34.333333333333343"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="gearshape" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="filled" image="trash.fill" catalog="system"/>
                                 <connections>
                                     <action selector="tapResetFlags:" destination="9v3-76-ven" eventType="touchUpInside" id="Bxk-sI-5Vq"/>
                                 </connections>
@@ -194,16 +194,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="293" height="324.66666666666669"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PfT-42-DlW" userLabel="infosStack">
-                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="20.333333333333332"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LifeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyj-KG-NNd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TurnLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYA-hB-DQj">
-                                                                        <rect key="frame" x="209.66666666666669" y="0.0" width="83.333333333333314" height="20"/>
+                                                                        <rect key="frame" x="209.66666666666669" y="0.0" width="83.333333333333314" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -671,8 +671,8 @@
         <image name="Main_Screen" width="2384" height="1660"/>
         <image name="Quizz_Page" width="2388" height="1670"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

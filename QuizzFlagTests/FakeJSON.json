@@ -1,0 +1,21 @@
+{
+    "europe": [
+        {
+            "name": "Albanie",
+            "flag": "Albanie.png",
+            "history": "https://fr.wikipedia.org/wiki/Albanie#Histoire",
+            "coatOfArms": "COA_Albanie.png",
+            "capital": "Tirana",
+            "continent": "Europe"
+        }
+    ],
+    
+    "amerique": [
+    ],
+    "asie": [
+    ],
+    "afrique": [
+    ],
+    "oceanie": [
+    ],
+}
