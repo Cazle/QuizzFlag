@@ -24,6 +24,8 @@
 		2978E9C62B8F3FA0006FC046 /* JSONCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 2978E9C52B8F3FA0006FC046 /* JSONCountries.json */; };
 		2978E9CA2B8F4A4B006FC046 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978E9C92B8F4A4B006FC046 /* TimerComponent.swift */; };
 		29A5A2542B9734280046A8C4 /* CountryDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A2532B9734280046A8C4 /* CountryDescriptionController.swift */; };
+		29A6DE942BA8994100C1A609 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DE932BA8994100C1A609 /* CoreDataManagerTests.swift */; };
+		29A6DE962BA8A36C00C1A609 /* TimerComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DE952BA8A36C00C1A609 /* TimerComponentTests.swift */; };
 		29DC14622BA34D240037948C /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DC14612BA34D240037948C /* AlertVC.swift */; };
 		29DC14702BA454670037948C /* QuizzEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DC146F2BA454670037948C /* QuizzEngineTests.swift */; };
 		29DC14772BA47CE60037948C /* MainScreenEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DC14762BA47CE60037948C /* MainScreenEngineTests.swift */; };
@@ -66,6 +68,8 @@
 		2978E9C52B8F3FA0006FC046 /* JSONCountries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONCountries.json; sourceTree = "<group>"; };
 		2978E9C92B8F4A4B006FC046 /* TimerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
 		29A5A2532B9734280046A8C4 /* CountryDescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDescriptionController.swift; sourceTree = "<group>"; };
+		29A6DE932BA8994100C1A609 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		29A6DE952BA8A36C00C1A609 /* TimerComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentTests.swift; sourceTree = "<group>"; };
 		29DC14612BA34D240037948C /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		29DC146D2BA454670037948C /* QuizzFlagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizzFlagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DC146F2BA454670037948C /* QuizzEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzEngineTests.swift; sourceTree = "<group>"; };
@@ -195,8 +199,10 @@
 				29DC146F2BA454670037948C /* QuizzEngineTests.swift */,
 				29DC14762BA47CE60037948C /* MainScreenEngineTests.swift */,
 				29DC14782BA836BE0037948C /* JSONMapperTests.swift */,
+				29A6DE932BA8994100C1A609 /* CoreDataManagerTests.swift */,
 				29DC14872BA860B70037948C /* ErrorJSON.json */,
 				29DC14812BA85CF20037948C /* FakeJSON.json */,
+				29A6DE952BA8A36C00C1A609 /* TimerComponentTests.swift */,
 			);
 			path = QuizzFlagTests;
 			sourceTree = "<group>";
@@ -332,7 +338,9 @@
 			files = (
 				29DC14792BA836BE0037948C /* JSONMapperTests.swift in Sources */,
 				29DC14772BA47CE60037948C /* MainScreenEngineTests.swift in Sources */,
+				29A6DE942BA8994100C1A609 /* CoreDataManagerTests.swift in Sources */,
 				29DC14702BA454670037948C /* QuizzEngineTests.swift in Sources */,
+				29A6DE962BA8A36C00C1A609 /* TimerComponentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
