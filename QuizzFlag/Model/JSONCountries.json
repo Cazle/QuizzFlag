@@ -123,9 +123,9 @@
         },
         {
             "name": "Grèce",
-            "flag": "Grèce.png",
+            "flag": "Grece.png",
             "history": "https://fr.wikipedia.org/wiki/Grèce#Histoire",
-            "coatOfArms": "COA_Grèce.png",
+            "coatOfArms": "COA_Grece.png",
             "capital": "Athènes",
             "continent": "Europe"
         },
@@ -251,9 +251,9 @@
         },
         {
             "name": "Norvège",
-            "flag": "Norvège.png",
+            "flag": "Norvege.png",
             "history": "https://fr.wikipedia.org/wiki/Norvège#Histoire",
-            "coatOfArms": "COA_Norvège.png",
+            "coatOfArms": "COA_Norvege.png",
             "capital": "Oslo",
             "continent": "Europe"
         },
@@ -315,9 +315,9 @@
         },
         {
             "name": "Slovénie",
-            "flag": "Slovénie.png",
+            "flag": "Slovenie.png",
             "history": "https://fr.wikipedia.org/wiki/Slovénie#Histoire",
-            "coatOfArms": "COA_Slovénie.png",
+            "coatOfArms": "COA_Slovenie.png",
             "capital": "Ljubljana",
             "continent": "Europe"
         },
@@ -331,9 +331,9 @@
         },
         {
             "name": "Suède",
-            "flag": "Suède.png",
+            "flag": "Suede.png",
             "history": "https://fr.wikipedia.org/wiki/Suède#Histoire",
-            "coatOfArms": "COA_Suède.png",
+            "coatOfArms": "COA_Suede.png",
             "capital": "Stockholm",
             "continent": "Europe"
         },
@@ -478,7 +478,7 @@
         },
         {
             "name": "République Dominicaine",
-            "flag": "République_Dominicaine.png",
+            "flag": "Republique_Dominicaine.png",
             "history": "https://fr.wikipedia.org/wiki/République_dominicaine#Histoire",
             "coatOfArms": "COA_République_Dominicaine.png",
             "capital": "Saint-Dominique",
@@ -598,9 +598,9 @@
         },
         {
             "name": "Pérou",
-            "flag": "Pérou.png",
+            "flag": "Perou.png",
             "history": "https://fr.wikipedia.org/wiki/Pérou#Histoire",
-            "coatOfArms": "COA_Pérou.png",
+            "coatOfArms": "COA_Perou.png",
             "capital": "Lima",
             "continent": "Amérique"
         },
@@ -646,7 +646,7 @@
         },
         {
             "name": "Vénézuéla",
-            "flag": "Vénézuéla.png",
+            "flag": "Venezuela.png",
             "history": "https://fr.wikipedia.org/wiki/Venezuela#Histoire",
             "coatOfArms": "COA_Vénézuéla.png",
             "capital": "Caracas",
@@ -662,7 +662,7 @@
         },
         {
             "name": "Trinité-et-Tobdago",
-            "flag": "Trinité.png",
+            "flag": "Trinite.png",
             "history": "https://fr.wikipedia.org/wiki/Trinité-et-Tobago#Histoire",
             "coatOfArms": "COA_Trinité.png",
             "capital": "Port-d'Espagne",
@@ -689,9 +689,9 @@
         },
         {
             "name": "Arménie",
-            "flag": "Arménie.png",
+            "flag": "Armenie.png",
             "history": "https://fr.wikipedia.org/wiki/Arménie#Histoire",
-            "coatOfArms": "COA_Arménie.png",
+            "coatOfArms": "COA_Armenie.png",
             "capital": "Erevan",
             "continent": "Asie"
         },
@@ -769,17 +769,17 @@
         },
         {
             "name": "Corée du Nord",
-            "flag": "Corée_du_Nord.png",
+            "flag": "Coree_du_Nord.png",
             "history": "https://fr.wikipedia.org/wiki/Corée_du_Nord#Histoire",
-            "coatOfArms": "COA_Corée_du_Nord.png",
+            "coatOfArms": "COA_Coree_du_Nord.png",
             "capital": "Pyongyang",
             "continent": "Asie"
         },
         {
             "name": "Corée du Sud",
-            "flag": "Corée_du_Sud.png",
+            "flag": "Coree_du_Sud.png",
             "history": "https://fr.wikipedia.org/wiki/Corée_du_Sud#Histoire",
-            "coatOfArms": "COA_Corée_du_Sud.png",
+            "coatOfArms": "COA_Coree_du_Sud.png",
             "capital": "Séoul",
             "continent": "Asie"
         },
@@ -801,9 +801,9 @@
         },
         {
             "name": "Indonésie",
-            "flag": "Indonésie.png",
+            "flag": "Indonesie.png",
             "history": "https://fr.wikipedia.org/wiki/Indonésie#Histoire",
-            "coatOfArms": "COA_Indonésie.png",
+            "coatOfArms": "COA_Indonesie.png",
             "capital": "Jakarta",
             "continent": "Asie"
         },
@@ -913,9 +913,9 @@
         },
         {
             "name": "Népal",
-            "flag": "Népal.png",
+            "flag": "Nepal.png",
             "history": "https://fr.wikipedia.org/wiki/Népal#Histoire",
-            "coatOfArms": "COA_Népal.png",
+            "coatOfArms": "COA_Nepal.png",
             "capital": "Katmandou",
             "continent": "Asie"
         },
@@ -929,9 +929,9 @@
         },
         {
             "name": "Ouzbékistan",
-            "flag": "Ouzbékistan.png",
+            "flag": "Ouzbekistan.png",
             "history": "https://fr.wikipedia.org/wiki/Ouzbékistan#Histoire",
-            "coatOfArms": "COA_Ouzbékistan.png",
+            "coatOfArms": "COA_Ouzbekistan.png",
             "capital": "Tachkent",
             "continent": "Asie"
         },
@@ -1017,9 +1017,9 @@
         },
         {
             "name": "Turkménistan",
-            "flag": "Turkménistan.png",
+            "flag": "Turkmenistan.png",
             "history": "https://fr.wikipedia.org/wiki/Turkménistan#Histoire",
-            "coatOfArms": "COA_Turkménistan.png",
+            "coatOfArms": "COA_Turkmenistan.png",
             "capital": "Achgabat",
             "continent": "Asie"
         },
