@@ -25,7 +25,7 @@ final class ListOfCountryController: UIViewController {
             storedCountries = try coreDataManager.fetchCountries()
             tableView.reloadData()
         } catch {
-            print("error from the tableview")
+            presentAlert()
         }
     }
     

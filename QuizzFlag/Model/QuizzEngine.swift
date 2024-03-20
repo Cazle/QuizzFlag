@@ -1,11 +1,11 @@
 import Foundation
 
 final class QuizzEngine {
-
+    
     var lives = 3
     var numberOfTurn = 0
     var guessedCountries: [Country] = []
- 
+    
     let winMessage = "Tu as gagné !"
     let loseMessage = "Tu as perdu..."
     
@@ -38,7 +38,7 @@ final class QuizzEngine {
         let correctResponse = getTheCorrectResponse(ofTheCurrentCountry: countries)
         
         let restOfResponses = countryNames.shuffled()
-  
+        
         let responses = getFourResponses(fakeResponses: restOfResponses, correctResponse: correctResponse)
         
         return responses
@@ -46,7 +46,7 @@ final class QuizzEngine {
     
     func getFilePathOfFlag(ofTheCurrentCountry: [Country]) -> String {
         guard let country = ofTheCurrentCountry.first else { return "" }
-    
+        
         return country.flag
     }
     

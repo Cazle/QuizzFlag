@@ -145,7 +145,7 @@ final class QuizzPageController: UIViewController {
         turnLabel.text = quizzEngine.settingTurn()
         lifeLabel.text = quizzEngine.settingLives()
     }
-
+    
     
     func checkIfTheGameHasEnded() {
         switch quizzEngine.checkTheStateOfTheGame() {

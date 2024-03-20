@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  QuizzFlag
-//
-//  Created by Kyllian GUILLOT on 05/02/2024.
-//
-
 import UIKit
 import CoreData
 
@@ -23,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-
+        
     }
     
     

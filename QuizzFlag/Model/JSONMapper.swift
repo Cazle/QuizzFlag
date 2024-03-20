@@ -13,7 +13,7 @@ final class JSONMapper {
     init(jsonData: String = "JSONCountries") {
         self.jsonData = jsonData
     }
-  
+    
     func decode() -> Result<Continents, Error> {
         
         guard let url = Bundle.main.url(forResource: jsonData, withExtension: "json") else {

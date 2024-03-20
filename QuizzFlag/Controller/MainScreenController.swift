@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  QuizzFlag
-//
-//  Created by Kyllian GUILLOT on 05/02/2024.
-//
-
 import UIKit
 
 final class MainScreenController: UIViewController {
@@ -27,7 +20,7 @@ final class MainScreenController: UIViewController {
         loadingCountries()
         setupUI()
     }
-   
+    
     
     @IBAction func tapButtons(_ sender: UIButton) {
         guard let getNameFromButton = sender.titleLabel?.text else { return }
@@ -62,7 +55,7 @@ final class MainScreenController: UIViewController {
     
     func fetchingCountries() {
         do {
-          countriesEntity = try coreDataManager.fetchCountries()
+            countriesEntity = try coreDataManager.fetchCountries()
         } catch {
             presentAlert()
         }
@@ -72,7 +65,7 @@ final class MainScreenController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let quizzController = segue.destination as? QuizzPageController else { return }
         guard let continent = continentModel else { return }
-            
+        
         switch buttonTitle {
         case "Europe":
             quizzController.titleContinent = "Europe"
@@ -98,7 +91,7 @@ final class MainScreenController: UIViewController {
             quizzController.titleContinent = "None"
         }
     }
-
+    
     
     func setupUI() {
         mainButtonsView.layer.cornerRadius = 30
