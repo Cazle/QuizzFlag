@@ -480,7 +480,7 @@
             "name": "République Dominicaine",
             "flag": "Republique_Dominicaine.png",
             "history": "https://fr.wikipedia.org/wiki/République_dominicaine#Histoire",
-            "coatOfArms": "COA_République_Dominicaine.png",
+            "coatOfArms": "COA_Republique_Dominicaine.png",
             "capital": "Saint-Dominique",
             "continent": "Amérique"
         },
@@ -648,7 +648,7 @@
             "name": "Vénézuéla",
             "flag": "Venezuela.png",
             "history": "https://fr.wikipedia.org/wiki/Venezuela#Histoire",
-            "coatOfArms": "COA_Vénézuéla.png",
+            "coatOfArms": "COA_Venezuela.png",
             "capital": "Caracas",
             "continent": "Amérique"
         },
@@ -664,7 +664,7 @@
             "name": "Trinité-et-Tobdago",
             "flag": "Trinite.png",
             "history": "https://fr.wikipedia.org/wiki/Trinité-et-Tobago#Histoire",
-            "coatOfArms": "COA_Trinité.png",
+            "coatOfArms": "COA_Trinite.png",
             "capital": "Port-d'Espagne",
             "continent": "Amérique"
         },
