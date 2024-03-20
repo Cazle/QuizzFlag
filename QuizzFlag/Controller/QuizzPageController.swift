@@ -22,7 +22,7 @@ final class QuizzPageController: UIViewController {
     @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var gameOverLabel: UILabel!
     @IBOutlet weak var numberOfFlagsAddedLabel: UILabel!
-    
+    @IBOutlet weak var returnToMenuButton: UIButton!
     
     @IBOutlet weak var currentFlagImageView: UIImageView!
     @IBOutlet weak var progressBarView: UIProgressView!
@@ -164,6 +164,7 @@ final class QuizzPageController: UIViewController {
         gameOverScreen.isHidden = false
         mainView.isHidden = true
         titleLabel.isHidden = true
+        returnToMenuButton.isHidden = true
     }
     
     func winningTheGame(withThoseCountryDiscovered: [Country]) {
