@@ -64,7 +64,9 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
         
         guard let countries = storedCountries else { return UITableViewCell()}
         
-        let country = countries[indexPath.row]
+        let sortedCountries = countries.sorted {$0.name ?? "" < $1.name ?? ""}
+        
+        let country = sortedCountries[indexPath.row]
         
         cell.settingCell(country: country)
         

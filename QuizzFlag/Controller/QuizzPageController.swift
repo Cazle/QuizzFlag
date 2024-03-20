@@ -123,7 +123,6 @@ final class QuizzPageController: UIViewController {
             guard let self = self else { return }
             progress += 0.01
             self.progressBarView.setProgress(progress, animated: true)
-            print(progress)
             
             if self.progressBarView.progress == 1 {
                 self.timerComponent.stopTheTimer()
