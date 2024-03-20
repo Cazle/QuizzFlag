@@ -9,7 +9,7 @@ final class CoreDataManager {
         self.context = context
     }
     
-    func unlockNewCountries(guessedCountryIn: [Country]?, name: String, history: String, flag: String, coatOfArms: String, capital: String, continent: String) -> CountryEntity {
+    func unlockNewCountries(name: String, history: String, flag: String, coatOfArms: String, capital: String, continent: String) -> CountryEntity {
         
         context.performAndWait {
             
@@ -43,7 +43,7 @@ final class CoreDataManager {
         }
     }
     
-    func countryIsExisting(named: String) -> Bool {
+    func isCountryExisting(named: String) -> Bool {
         var isExisting = false
         
         context.performAndWait {
@@ -57,10 +57,9 @@ final class CoreDataManager {
         return isExisting
     }
     
-    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) throws{
-        
+    func addingAllTheCountriesDiscovered(countriesDiscovered: [Country]) throws {
         for country in countriesDiscovered {
-            let _ = unlockNewCountries(guessedCountryIn: countriesDiscovered, name: country.name, history: country.history, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
+            let _ = unlockNewCountries(name: country.name, history: country.history, flag: country.flag, coatOfArms: country.coatOfArms, capital: country.capital, continent: country.continent)
         }
         try savingContext()
     }

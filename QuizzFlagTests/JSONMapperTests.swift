@@ -4,11 +4,10 @@ import XCTest
 
 final class JSONMapperTests: XCTestCase {
     
-    let sut = JSONMapper()
-    
+
     func test_whenTheJSONIsEmptyAndThrowAUrlNotFoundError() {
         
-        sut.jsonData = "noData"
+        let sut = JSONMapper(jsonData: "noData")
         
         switch sut.decode() {
         case .success(let success):
@@ -19,7 +18,7 @@ final class JSONMapperTests: XCTestCase {
     }
     
     func test_whenTheDecodingIsNotSuccessfulAndReturnADecodingErrorDecodingDidNotWork() {
-        sut.jsonData = "ErrorJSON"
+       let sut = JSONMapper(jsonData: "ErrorJSON")
         
         switch sut.decode() {
         case .success(let success):
@@ -30,7 +29,7 @@ final class JSONMapperTests: XCTestCase {
     }
     
     func test_whenTheDecodingIsSuccessfullAndReturnTheCountry() {
-        sut.jsonData = "FakeJSON"
+        let sut = JSONMapper(jsonData: "FakeJSON")
         
         switch sut.decode() {
         case .success(let success):

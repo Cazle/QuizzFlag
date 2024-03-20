@@ -34,7 +34,7 @@ final class CoreDataManagerTests: XCTestCase {
     
     func test_fetchingCountries() {
             
-        let _ = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let _ = coreDataManager.unlockNewCountries(name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         
@@ -44,7 +44,7 @@ final class CoreDataManagerTests: XCTestCase {
     }
   
     func test_deletingACountry() {
-        let countryToDelete = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let countryToDelete = coreDataManager.unlockNewCountries(name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         
@@ -56,21 +56,21 @@ final class CoreDataManagerTests: XCTestCase {
     }
     
     func test_countryIsExistingAndReturnTrue() {
-        let _ = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let _ = coreDataManager.unlockNewCountries(name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         
-        let countryExists = coreDataManager.countryIsExisting(named: "France")
+        let countryExists = coreDataManager.isCountryExisting(named: "France")
         
         XCTAssertTrue(countryExists)
     }
     
     func test_countryIsNotExistingAndReturnFalse() {
-        let _ = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
+        let _ = coreDataManager.unlockNewCountries(name: "France", history: "wikipedia", flag: "france.png", coatOfArms: "COA.france.png", capital: "Paris", continent: "Europe")
         
         try? coreDataManager.savingContext()
         
-        let countryDontExists = coreDataManager.countryIsExisting(named: "Allemagne")
+        let countryDontExists = coreDataManager.isCountryExisting(named: "Allemagne")
         
         XCTAssertFalse(countryDontExists)
     }
@@ -90,9 +90,9 @@ final class CoreDataManagerTests: XCTestCase {
     }
     
     func test_deletingAllTheCountriesStored() {
-        let country1 = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "France", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
-        let country2 = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "Allemagne", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
-        let country3 = coreDataManager.unlockNewCountries(guessedCountryIn: nil, name: "Turquie", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
+        let country1 = coreDataManager.unlockNewCountries(name: "France", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
+        let country2 = coreDataManager.unlockNewCountries(name: "Allemagne", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
+        let country3 = coreDataManager.unlockNewCountries(name: "Turquie", history: "", flag: "", coatOfArms: "", capital: "", continent: "")
         
         let countriesToDelete: [CountryEntity] = [country1, country2, country3]
     

@@ -8,9 +8,9 @@ final class QuizzPageController: UIViewController {
     let coreDataManager = CoreDataManager()
     
     
-    var countries: [Country]?
-    var countryNames: [String]?
-    var titleContinent: String?
+    var countries: [Country] = []
+    var countryNames: [String] = []
+    var titleContinent: String = ""
     var fetchedCountries: [CountryEntity]?
     
     
@@ -48,7 +48,6 @@ final class QuizzPageController: UIViewController {
     
     @IBAction func tapResponsesButtons(_ sender: UIButton) {
         
-        guard countries != nil else { return }
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
         guard let title = sender.titleLabel?.text else { return }
         
@@ -138,7 +137,7 @@ final class QuizzPageController: UIViewController {
     
     func relaunchTheTurn() {
         timerComponent.stopTheTimer()
-        countries?.remove(at: 0)
+        countries.remove(at: 0)
         quizzEngine.numberOfTurn += 1
         mainGame()
     }
@@ -147,25 +146,24 @@ final class QuizzPageController: UIViewController {
         turnLabel.text = quizzEngine.settingTurn()
         lifeLabel.text = quizzEngine.settingLives()
     }
+
+    
+    func checkIfTheGameHasEnded() {
+        switch quizzEngine.checkTheStateOfTheGame() {
+        case .win:
+            winningTheGame(withThoseCountryDiscovered: quizzEngine.guessedCountries)
+        case .lose:
+            losingTheGame()
+        case .ongoing:
+            break
+        }
+    }
     
     func displayGameOver() {
         timerComponent.stopTheTimer()
         gameOverScreen.isHidden = false
         mainView.isHidden = true
         titleLabel.isHidden = true
-    }
-    
-    func checkIfTheGameHasEnded() {
-        guard let guessedCountries = quizzEngine.guessedCountries else { return }
-        
-        switch quizzEngine.checkTheStateOfTheGame() {
-        case .win:
-            winningTheGame(withThoseCountryDiscovered: guessedCountries)
-        case .lose:
-            losingTheGame()
-        case .ongoing:
-            break
-        }
     }
     
     func winningTheGame(withThoseCountryDiscovered: [Country]) {
@@ -196,8 +194,8 @@ final class QuizzPageController: UIViewController {
         }
     }
     
-    func checkingBeforeAddingCountry(countryName: String, countries: [Country]?) {
-        if coreDataManager.countryIsExisting(named: countryName) == false {
+    func checkingBeforeAddingCountry(countryName: String, countries: [Country]) {
+        if coreDataManager.isCountryExisting(named: countryName) == false {
             quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
     }

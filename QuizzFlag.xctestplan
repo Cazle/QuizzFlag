@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "7F15B6CA-83CF-416A-9992-4CFA6FA7A0D6",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:QuizzFlag.xcodeproj",
+      "identifier" : "2955CA192B70F275001D7323",
+      "name" : "QuizzFlag"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:QuizzFlag.xcodeproj",
+        "identifier" : "29DC146C2BA454670037948C",
+        "name" : "QuizzFlagTests"
+      }
+    }
+  ],
+  "version" : 1
+}

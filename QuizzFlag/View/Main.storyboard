@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main_Screen" translatesAutoresizingMaskIntoConstraints="NO" id="obi-va-5uq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_screen" translatesAutoresizingMaskIntoConstraints="NO" id="obi-va-5uq">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -48,7 +48,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Europe">
-                                                    <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                                    <backgroundConfiguration key="background" image="main_buttons"/>
                                                     <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
@@ -61,7 +61,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Amérique">
-                                                    <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                                    <backgroundConfiguration key="background" image="main_buttons"/>
                                                     <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
@@ -74,7 +74,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Afrique">
-                                                    <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                                    <backgroundConfiguration key="background" image="main_buttons"/>
                                                     <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
@@ -87,7 +87,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Asie">
-                                                    <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                                    <backgroundConfiguration key="background" image="main_buttons"/>
                                                     <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
@@ -100,7 +100,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Océanie">
-                                                    <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                                    <backgroundConfiguration key="background" image="main_buttons"/>
                                                     <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
@@ -171,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Quizz_Page" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-iF-igI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizz_page" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-iF-igI">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -194,16 +194,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="293" height="324.66666666666669"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PfT-42-DlW" userLabel="infosStack">
-                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="20.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="20"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LifeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyj-KG-NNd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TurnLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYA-hB-DQj">
-                                                                        <rect key="frame" x="209.66666666666669" y="0.0" width="83.333333333333314" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="209.66666666666669" y="0.0" width="83.333333333333314" height="20"/>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -533,8 +533,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CountryDescription" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-1v-qZK">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="1660"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="country_description" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-1v-qZK">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvq-fy-lOj">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
@@ -616,7 +616,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="HISTOIRE DU PAYS">
-                                            <backgroundConfiguration key="background" image="Main_Buttons"/>
+                                            <backgroundConfiguration key="background" image="main_buttons"/>
                                             <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -643,13 +643,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hvq-fy-lOj" firstAttribute="leading" secondItem="71i-Rv-nsv" secondAttribute="leading" id="Ctz-CN-Kuh"/>
+                            <constraint firstItem="5T0-1v-qZK" firstAttribute="leading" secondItem="71i-Rv-nsv" secondAttribute="leading" id="IR8-bl-EoF"/>
+                            <constraint firstItem="5T0-1v-qZK" firstAttribute="trailing" secondItem="71i-Rv-nsv" secondAttribute="trailing" id="MpL-3b-hYD"/>
+                            <constraint firstAttribute="bottom" secondItem="5T0-1v-qZK" secondAttribute="bottom" id="NwT-ym-kBT"/>
                             <constraint firstItem="71i-Rv-nsv" firstAttribute="bottom" secondItem="hvq-fy-lOj" secondAttribute="bottom" id="PC7-hd-Jwp"/>
                             <constraint firstItem="71i-Rv-nsv" firstAttribute="trailing" secondItem="hvq-fy-lOj" secondAttribute="trailing" id="Uj1-eN-a0y"/>
                             <constraint firstItem="hvq-fy-lOj" firstAttribute="top" secondItem="71i-Rv-nsv" secondAttribute="top" id="cSz-iK-Wt1"/>
-                            <constraint firstItem="71i-Rv-nsv" firstAttribute="trailing" secondItem="5T0-1v-qZK" secondAttribute="trailing" id="dmM-EZ-ZFj"/>
                             <constraint firstItem="71i-Rv-nsv" firstAttribute="bottom" secondItem="hvq-fy-lOj" secondAttribute="bottom" id="dvs-EB-9Yp"/>
-                            <constraint firstItem="5T0-1v-qZK" firstAttribute="top" secondItem="hvq-fy-lOj" secondAttribute="top" constant="-103" id="mUH-21-Zbe"/>
-                            <constraint firstItem="5T0-1v-qZK" firstAttribute="leading" secondItem="71i-Rv-nsv" secondAttribute="leading" id="mty-DA-9fQ"/>
+                            <constraint firstItem="5T0-1v-qZK" firstAttribute="top" secondItem="ytQ-FO-m59" secondAttribute="top" id="wWv-mn-BPP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CkT-yy-Wk0"/>
@@ -666,12 +667,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CountryDescription" width="2382" height="1660"/>
-        <image name="Main_Buttons" width="2380" height="1660"/>
-        <image name="Main_Screen" width="2384" height="1660"/>
-        <image name="Quizz_Page" width="2388" height="1670"/>
+        <image name="country_description" width="2382" height="1660"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="main_buttons" width="2380" height="1660"/>
+        <image name="main_screen" width="2384" height="1660"/>
+        <image name="quizz_page" width="2388" height="1670"/>
         <image name="trash.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -3,13 +3,12 @@ import Foundation
 @testable import QuizzFlag
 
 final class QuizzEngineTests: XCTestCase {
-
-    let sut = QuizzEngine()
-    
     func test_whenGetTheCorrectResponseIsCalledAndReturnTheCorrectResponse() {
         
-        let countryOne = Country(name: "France", flag: "France.png", history: "www.france.fr", coatOfArms: "COA_France.png", capital: "Paris", continent: "Europe")
-        let countryTwo = Country(name: "Allemagne", flag: "Allemagne.png", history: "www.allemagne.de", coatOfArms: "COA_Allemagne.png", capital: "Berlin", continent: "Europe")
+        let sut = QuizzEngine()
+        
+        let countryOne = Country(name: "France", flag: "", history: "", coatOfArms: "", capital: "", continent: "")
+        let countryTwo = Country(name: "Allemagne", flag: "", history: "", coatOfArms: "", capital: "", continent: "")
         
         let arrayOfCountry: [Country] = [countryOne, countryTwo]
         
@@ -19,6 +18,9 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_settingFourResponsesAndGettingFourResponsesWithTheCorrectResponseInIt() {
+        
+        let sut = QuizzEngine()
+        
         let countryOne = Country(name: "France", flag: "", history: "", coatOfArms: "", capital: "", continent: "")
         let countryTwo = Country(name: "Allemagne", flag: "", history: "", coatOfArms: "", capital: "", continent: "")
         
@@ -35,6 +37,9 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_gettingTheFilePathToShowTheFlagImage() {
+        
+        let sut = QuizzEngine()
+        
         let countryOne = Country(name: "Allemagne", flag: "Allemagne.png", history: "", coatOfArms: "", capital: "", continent: "")
         let countryTwo = Country(name: "France", flag: "France.png", history: "", coatOfArms: "", capital: "", continent: "")
         
@@ -48,6 +53,8 @@ final class QuizzEngineTests: XCTestCase {
     
     func test_whenTheNumberOfTurnIs10AndTheGameFinishes() {
         
+        let sut = QuizzEngine()
+        
         sut.numberOfTurn = 10
         sut.lives = 2
         
@@ -57,6 +64,9 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_whenTheNumberOfLivesIs0SoThePlayerLoseTheGame() {
+        
+        let sut = QuizzEngine()
+        
         sut.lives = 0
         sut.numberOfTurn = 8
         
@@ -66,6 +76,9 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_theUserDidNotLostOrFinishTheGameSoTheGameIsOngoing() {
+        
+        let sut = QuizzEngine()
+        
         sut.lives = 2
         sut.numberOfTurn = 7
         
@@ -75,6 +88,7 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_whenThereIsAContinentNameToDisplay() {
+        let sut = QuizzEngine()
         
         let contientName = sut.setContinentName(name: "Asie")
         
@@ -83,6 +97,7 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_settingTheLivesToDisplay() {
+        let sut = QuizzEngine()
         
         sut.lives = 2
         
@@ -92,6 +107,7 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_settingTheTurnsToDisplay() {
+        let sut = QuizzEngine()
         
         sut.numberOfTurn = 5
         
@@ -101,12 +117,13 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_messageToDisplayTheNumberOfFlagsDiscovered() {
+        let sut = QuizzEngine()
         
         let countryOne = Country(name: "Allemagne", flag: "Allemagne.png", history: "", coatOfArms: "", capital: "", continent: "")
         let countryTwo = Country(name: "France", flag: "France.png", history: "", coatOfArms: "", capital: "", continent: "")
         
-        sut.guessedCountries?.append(countryOne)
-        sut.guessedCountries?.append(countryTwo)
+        sut.guessedCountries.append(countryOne)
+        sut.guessedCountries.append(countryTwo)
         
         let textDiscovery = sut.discoveryMessage()
         
@@ -114,6 +131,7 @@ final class QuizzEngineTests: XCTestCase {
     }
     
     func test_addingTheFirstCountryOnTheGuessedCountriesWhenThePlayerHasACorrectResponse() {
+        let sut = QuizzEngine()
         
         var countries: [Country] = []
         
@@ -125,6 +143,6 @@ final class QuizzEngineTests: XCTestCase {
         
         sut.addingCountryForCorrectResponse(addingCountryFrom: countries)
         
-        XCTAssertEqual(sut.guessedCountries?[0].name, "Allemagne")
+        XCTAssertEqual(sut.guessedCountries[0].name, "Allemagne")
     }
 }

@@ -4,11 +4,10 @@ final class QuizzEngine {
 
     var lives = 3
     var numberOfTurn = 0
-    var guessedCountries: [Country]? = []
+    var guessedCountries: [Country] = []
  
-    
-    var winMessage = "Tu as gagné !"
-    var loseMessage = "Tu as perdu..."
+    let winMessage = "Tu as gagné !"
+    let loseMessage = "Tu as perdu..."
     
     enum stateOfThegame {
         case win
@@ -16,9 +15,8 @@ final class QuizzEngine {
         case ongoing
     }
     
-    func getTheCorrectResponse(ofTheCurrentCountry: [Country]?) -> String {
-        guard let country = ofTheCurrentCountry?.first else { return "" }
-        
+    func getTheCorrectResponse(ofTheCurrentCountry: [Country]) -> String {
+        guard let country = ofTheCurrentCountry.first else { return "" }
         return country.name
     }
     
@@ -35,23 +33,21 @@ final class QuizzEngine {
         return finalArrayOfResponses
     }
     
-    func settingFourResponses(countries: [Country]?, countryNames: [String]?) -> [String] {
+    func settingFourResponses(countries: [Country], countryNames: [String]) -> [String] {
         
         let correctResponse = getTheCorrectResponse(ofTheCurrentCountry: countries)
         
-        guard let restOfResponses = countryNames?.shuffled() else { return [] }
+        let restOfResponses = countryNames.shuffled()
   
         let responses = getFourResponses(fakeResponses: restOfResponses, correctResponse: correctResponse)
         
         return responses
     }
     
-    func getFilePathOfFlag(ofTheCurrentCountry: [Country]?) -> String {
-        guard let country = ofTheCurrentCountry?.first else { return "" }
-        
-        let flag = country.flag
-        
-        return flag
+    func getFilePathOfFlag(ofTheCurrentCountry: [Country]) -> String {
+        guard let country = ofTheCurrentCountry.first else { return "" }
+    
+        return country.flag
     }
     
     func checkTheStateOfTheGame() -> stateOfThegame {
@@ -65,7 +61,7 @@ final class QuizzEngine {
         return .ongoing
     }
     
-    func setContinentName(name: String?) -> String? {
+    func setContinentName(name: String) -> String {
         return name
     }
     
@@ -78,11 +74,11 @@ final class QuizzEngine {
     }
     
     func discoveryMessage() -> String {
-        return "Nouveaux drapeaux découverts : \(guessedCountries?.count ?? 0)"
+        return "Nouveaux drapeaux découverts : \(guessedCountries.count)"
     }
     
-    func addingCountryForCorrectResponse(addingCountryFrom: [Country]?){
-        guard let countryToAdd = addingCountryFrom?.first else { return }
-        guessedCountries?.append(countryToAdd)
+    func addingCountryForCorrectResponse(addingCountryFrom: [Country]){
+        guard let countryToAdd = addingCountryFrom.first else { return }
+        guessedCountries.append(countryToAdd)
     }
 }

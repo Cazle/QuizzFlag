@@ -1,7 +1,7 @@
 import Foundation
 
 
-struct Model: Decodable {
+struct Continents: Decodable {
     let europe: [Country]
     let amerique: [Country]
     let asie: [Country]

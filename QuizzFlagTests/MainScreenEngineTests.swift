@@ -4,9 +4,6 @@ import Foundation
 
 final class MainScreenEngineTests: XCTestCase {
     
-    let sut = MainScreenEngine()
-    
-    
     func test_randomizingCountriesAndGetElevenOfThem() {
         
         let countryOne = Country(name: "France", flag: "", history: "", coatOfArms: "", capital: "", continent: "")
@@ -30,7 +27,7 @@ final class MainScreenEngineTests: XCTestCase {
         
         let allCountries: [Country] = [countryOne, countryTwo, countryThree, countryFour, countryFive, countrySix, countrySeven, countryEight, countryNine, countryTen, countryEleven, countryTwelve, countryThirteen, countryFourteen, countryFiveteen, countrySixteen, countrySeventeen]
         
-        let getElevenCountries = sut.randomizingCountries(countries: allCountries)
+        let getElevenCountries = MainScreenEngine.randomizingCountries(countries: allCountries)
     
         let countriesNames = allCountries.map({$0.name})
         let elevenCountriesNames = getElevenCountries.map({$0.name})
@@ -58,7 +55,7 @@ final class MainScreenEngineTests: XCTestCase {
         
         let allCountries: [Country] = [countryOne, countryTwo, countryThree, countryFour, countryFive, countrySix, countrySeven, countryEight, countryNine, countryTen, countryEleven, countryTwelve, countryThirteen]
         
-        let getAllTheNames = sut.randomizingCountriesNames(names: allCountries)
+        let getAllTheNames = MainScreenEngine.randomizingCountriesNames(names: allCountries)
         
         XCTAssertEqual(getAllTheNames.count, 13)
         XCTAssertEqual(getAllTheNames, getAllTheNames as [String])

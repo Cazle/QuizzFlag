@@ -50,35 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     // MARK: - Core Data Background Context
-    
     lazy var backgroundContext: NSManagedObjectContext = {
         return persistentContainer.newBackgroundContext()
     }()
     lazy var coreDataManager: CoreDataManager = {
         return CoreDataManager(context: backgroundContext)
     }()
-    
-    // MARK: - Core Data Saving support
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
-    // MARK: - PerformAndWait on Main Context
-    
-    func performAndWaitOnMainContext(_ block: @escaping () -> Void) {
-        let context = persistentContainer.viewContext
-        context.performAndWait {
-            block()
-        }
-    }
 }
 

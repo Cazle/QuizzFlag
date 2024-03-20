@@ -8,15 +8,19 @@ final class JSONMapper {
         case decodingDidNotWork
     }
     
-    var jsonData = "JSONCountries"
+    let jsonData: String
+    
+    init(jsonData: String = "JSONCountries") {
+        self.jsonData = jsonData
+    }
   
-    func decode() -> Result<Model, Error> {
+    func decode() -> Result<Continents, Error> {
         
         guard let url = Bundle.main.url(forResource: jsonData, withExtension: "json") else {
             return .failure(DecodingError.urlNotFound)
         }
         
-        guard let jsonDecoded = try? JSONDecoder().decode(Model.self, from: Data(contentsOf: url)) else {
+        guard let jsonDecoded = try? JSONDecoder().decode(Continents.self, from: Data(contentsOf: url)) else {
             return .failure(DecodingError.decodingDidNotWork)
         }
         
