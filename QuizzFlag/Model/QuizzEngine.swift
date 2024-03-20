@@ -51,12 +51,11 @@ final class QuizzEngine {
     }
     
     func checkTheStateOfTheGame() -> stateOfThegame {
-        
-        if numberOfTurn == 10 {
-            return .win
-        }
         if lives == 0 {
             return .lose
+        }
+        if numberOfTurn == 10 {
+            return .win
         }
         return .ongoing
     }
