@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 final class QuizzPageController: UIViewController {
     
@@ -32,6 +33,7 @@ final class QuizzPageController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        analytics()
         setupUI()
         fetchingCountries()
         titleLabel.text = quizzEngine.setContinentName(name: titleContinent)
@@ -50,6 +52,8 @@ final class QuizzPageController: UIViewController {
         
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
         guard let title = sender.titleLabel?.text else { return }
+        
+        Analytics.logEvent(title, parameters: [:])
         
         if title == correctResponse {
             checkingBeforeAddingCountry(countryName: correctResponse, countries: countries)
@@ -198,6 +202,11 @@ final class QuizzPageController: UIViewController {
         if coreDataManager.isCountryExisting(named: countryName) == false {
             quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
+    }
+    func analytics() {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+          AnalyticsParameterContentType: "cont",
+        ])
     }
 }
 

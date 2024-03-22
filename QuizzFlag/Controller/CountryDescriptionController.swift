@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 final class CountryDescriptionController: UIViewController {
     
@@ -15,6 +16,7 @@ final class CountryDescriptionController: UIViewController {
     
     override func viewDidLoad() {
         settingDescriptionPage()
+        analytics()
     }
     
     private func settingDescriptionPage() {
@@ -38,5 +40,11 @@ final class CountryDescriptionController: UIViewController {
         guard let url = URL(string: receivedUrl) else { return }
         
         UIApplication.shared.open(url)
+    }
+    
+    func analytics() {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+          AnalyticsParameterContentType: "cont",
+        ])
     }
 }

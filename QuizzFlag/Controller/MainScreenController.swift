@@ -1,6 +1,10 @@
 import UIKit
+import FirebaseCore
+import FirebaseAnalytics
 
 final class MainScreenController: UIViewController {
+    
+    
     
     var buttonTitle: String?
     var continentModel: Continents?
@@ -14,17 +18,20 @@ final class MainScreenController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchingCountries()
+        analytics()
     }
     
     override func viewDidLoad() {
         loadingCountries()
         setupUI()
     }
-    
-    
+        
     @IBAction func tapButtons(_ sender: UIButton) {
         guard let getNameFromButton = sender.titleLabel?.text else { return }
         buttonTitle = getNameFromButton
+        
+        Analytics.logEvent(getNameFromButton, parameters: [:])
+        
         performSegue(withIdentifier: "goToQuizz", sender: self)
     }
     
@@ -92,9 +99,14 @@ final class MainScreenController: UIViewController {
         }
     }
     
-    
     func setupUI() {
         mainButtonsView.layer.cornerRadius = 30
+    }
+    
+    func analytics() {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+          AnalyticsParameterContentType: "cont",
+        ])
     }
 }
 

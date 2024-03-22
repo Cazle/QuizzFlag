@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 final class ListOfCountryController: UIViewController {
     
@@ -43,14 +44,16 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let storedCountries = storedCountries else { return }
-        let currentCountry = storedCountries[indexPath.row]
+        let sortedCountries = storedCountries.sorted {$0.name ?? "" < $1.name ?? ""}
+        let currentCountry = sortedCountries[indexPath.row]
         selectedCountry = currentCountry
+        
+        Analytics.logEvent(currentCountry.name ?? "", parameters: [:])
         
         performSegue(withIdentifier: "listToDescription", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let allCountries = storedCountries else { return 0 }
         return allCountries.count
     }
