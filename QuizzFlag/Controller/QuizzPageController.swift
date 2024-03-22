@@ -222,9 +222,7 @@ final class QuizzPageController: UIViewController {
     
     //Analytics to know stats on the player's behavior
     func analytics() {
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-          AnalyticsParameterContentType: "cont",
-        ])
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [:])
     }
 }
 
