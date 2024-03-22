@@ -96,6 +96,7 @@ final class QuizzPageController: UIViewController {
             button.tintColor = .systemBlue
         }
     }
+    
     // Design for borders
     func setupUI() {
         mainView.layer.cornerRadius = 30

@@ -83,5 +83,4 @@ extension ListOfCountryController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
 }
