@@ -42,12 +42,13 @@ final class QuizzPageController: UIViewController {
     
     // MARK: - IBActions of the quizz
     
+    // Go back to main menu and stops timer
     @IBAction func tapBackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         timerComponent.stopTheTimer()
     }
     
-    
+    // Handle the case where the player gets a correct or wrong response
     @IBAction func tapResponsesButtons(_ sender: UIButton) {
         
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
@@ -65,6 +66,7 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    // This button is hidden and is showed if the player gets a bad answer, or runs out of time. Resets buttons to normal, the player lose a life, and relaunch a turn
     @IBAction func nextFlagButton(_ sender: Any) {
         nextFlagButtonView.isHidden = true
         resettingTheButtonsColorToNormal()
@@ -74,6 +76,8 @@ final class QuizzPageController: UIViewController {
     
     
     // MARK: - Style of buttons and handling them and desing
+    
+    // Show the correct response in green, and the bad ones in red, and disable all the buttons
     func coloringTheCorrectResponse(correctResponse: String) {
         for button in allButtons {
             button.isUserInteractionEnabled = false
@@ -85,13 +89,14 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    // Resetting the buttons to blue, and re-enable all the buttons
     func resettingTheButtonsColorToNormal() {
         for button in allButtons {
             button.isUserInteractionEnabled = true
             button.tintColor = .systemBlue
         }
     }
-    
+    // Design for borders
     func setupUI() {
         mainView.layer.cornerRadius = 30
         gameOverScreen.layer.cornerRadius = 30
@@ -99,6 +104,7 @@ final class QuizzPageController: UIViewController {
     
     // MARK: - Main methods for the quizz
     
+    // Fetch the countries from CoreData/ Start Timer/ Check the state of the game/ Update lives and turns/ Display responses on the buttons/ Set the image of the current country to guess
     func mainGame() {
         fetchingCountries()
         timerBar()
@@ -115,6 +121,7 @@ final class QuizzPageController: UIViewController {
         currentFlagImageView.image = image
     }
     
+    //Function to handle timer and the progressView. Duration : 10 Seconds
     func timerBar() {
         
         let correctResponse = quizzEngine.getTheCorrectResponse(ofTheCurrentCountry: countries)
@@ -138,6 +145,7 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    // Stops the timer / Remove a country from the array to go to the next country / Plus 1 turn / Relaunch MainGame()
     func relaunchTheTurn() {
         timerComponent.stopTheTimer()
         countries.remove(at: 0)
@@ -145,12 +153,13 @@ final class QuizzPageController: UIViewController {
         mainGame()
     }
     
+    // Updates lives and turns
     func updatingTheLabels() {
         turnLabel.text = quizzEngine.settingTurn()
         lifeLabel.text = quizzEngine.settingLives()
     }
     
-    
+    // Check on each turn if the player has lose or won
     func checkIfTheGameHasEnded() {
         switch quizzEngine.checkTheStateOfTheGame() {
         case .win:
@@ -162,6 +171,7 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    // Stops timer, display the game over screen and hiding the rests of the views
     func displayGameOver() {
         timerComponent.stopTheTimer()
         gameOverScreen.isHidden = false
@@ -170,6 +180,7 @@ final class QuizzPageController: UIViewController {
         returnToMenuButton.isHidden = true
     }
     
+    // Method to add all the countries the player guessed, and tell him how many flags he won
     func winningTheGame(withThoseCountryDiscovered: [Country]) {
         do {
             try coreDataManager.addingAllTheCountriesDiscovered(countriesDiscovered: withThoseCountryDiscovered)
@@ -182,6 +193,7 @@ final class QuizzPageController: UIViewController {
         numberOfFlagsAddedLabel.text = quizzEngine.discoveryMessage()
     }
     
+    // Tell the player that he lost
     func losingTheGame() {
         displayGameOver()
         numberOfFlagsAddedLabel.isHidden = true
@@ -190,6 +202,7 @@ final class QuizzPageController: UIViewController {
     
     //MARK: - CoreData methods
     
+    //Fetching countries from CoreData
     func fetchingCountries() {
         do {
             fetchedCountries = try coreDataManager.fetchCountries()
@@ -198,11 +211,16 @@ final class QuizzPageController: UIViewController {
         }
     }
     
+    //If the player has already found a country in the previous quizz, he doesn't unlock it again. Otherwise, he discovers it
     func checkingBeforeAddingCountry(countryName: String, countries: [Country]) {
         if coreDataManager.isCountryExisting(named: countryName) == false {
             quizzEngine.addingCountryForCorrectResponse(addingCountryFrom: countries)
         }
     }
+    
+    //MARK: - FirebaseAnalytics
+    
+    //Analytics to know stats on the player's behavior
     func analytics() {
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
           AnalyticsParameterContentType: "cont",

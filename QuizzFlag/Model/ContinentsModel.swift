@@ -1,5 +1,6 @@
 import Foundation
 
+// Model for our JSON
 
 struct Continents: Decodable {
     let europe: [Country]

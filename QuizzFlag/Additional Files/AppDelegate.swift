@@ -4,10 +4,9 @@ import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    
-    
+        
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Init Firebase in the app
         FirebaseApp.configure()
         return true
     }
@@ -23,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     // MARK: - Core Data
+    
+    //Making a container for our data
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "QuizzFlag")
         
@@ -36,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     // MARK: - Core Data Background Context
+    
+    //Making a background context for our CoreData container
     lazy var backgroundContext: NSManagedObjectContext = {
         return persistentContainer.newBackgroundContext()
     }()

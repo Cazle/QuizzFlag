@@ -10,10 +10,12 @@ final class JSONMapper {
     
     let jsonData: String
     
+    // Init to pass the JSON name of our choice, useful for tests
     init(jsonData: String = "JSONCountries") {
         self.jsonData = jsonData
     }
     
+    // Decoding our JSON and return it
     func decode() -> Result<Continents, Error> {
         
         guard let url = Bundle.main.url(forResource: jsonData, withExtension: "json") else {

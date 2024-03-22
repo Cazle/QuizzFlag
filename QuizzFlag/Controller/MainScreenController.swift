@@ -25,7 +25,8 @@ final class MainScreenController: UIViewController {
         loadingCountries()
         setupUI()
     }
-        
+    
+    // Getting the name of the button/ Analyse the name/ Perform segue to Quizz
     @IBAction func tapButtons(_ sender: UIButton) {
         guard let getNameFromButton = sender.titleLabel?.text else { return }
         buttonTitle = getNameFromButton
@@ -35,6 +36,7 @@ final class MainScreenController: UIViewController {
         performSegue(withIdentifier: "goToQuizz", sender: self)
     }
     
+    // Reset all the flags unlocked in the ListOfCountryController/CoreData
     @IBAction func tapResetFlags(_ sender: Any) {
         let alertVC = UIAlertController(title: "Supprimer", message: "Vous êtes sûr de vouloir reinitialiser vos dreapeaux à zéro ? Cette action est definitive. ", preferredStyle: UIAlertController.Style.alert)
         
@@ -50,6 +52,7 @@ final class MainScreenController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
+    // Decoding the JSON with all our data (Continents, countries...)
     func loadingCountries() {
         let decoding = decoder.decode()
         switch decoding {
@@ -60,6 +63,7 @@ final class MainScreenController: UIViewController {
         }
     }
     
+    // Fetching countries from CoreData
     func fetchingCountries() {
         do {
             countriesEntity = try coreDataManager.fetchCountries()
@@ -68,7 +72,7 @@ final class MainScreenController: UIViewController {
         }
     }
     
-    
+    // Method who handle's the correct data to send to the quizz (If the player click the "Europe" button, he gets a quizz with all the countries of Europe)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let quizzController = segue.destination as? QuizzPageController else { return }
         guard let continent = continentModel else { return }
@@ -99,10 +103,12 @@ final class MainScreenController: UIViewController {
         }
     }
     
+    // Design for the border of the menu
     func setupUI() {
         mainButtonsView.layer.cornerRadius = 30
     }
     
+    //Analytics to know stats on the player's behavior
     func analytics() {
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
           AnalyticsParameterContentType: "cont",

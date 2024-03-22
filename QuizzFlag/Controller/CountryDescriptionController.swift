@@ -19,6 +19,7 @@ final class CountryDescriptionController: UIViewController {
         analytics()
     }
     
+    //Setting the infos on the screen
     private func settingDescriptionPage() {
         
         guard let country = countryToShow else { return }
@@ -34,6 +35,7 @@ final class CountryDescriptionController: UIViewController {
         
     }
     
+    // Button to redirect the player on the wikipedia's history country
     @IBAction func tapToGoWebsite(_ sender: Any) {
         guard let receivedUrl = countryToShow?.history else { return }
         
@@ -42,6 +44,7 @@ final class CountryDescriptionController: UIViewController {
         UIApplication.shared.open(url)
     }
     
+    //Analytics to know stats on the player's behavior
     func analytics() {
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
           AnalyticsParameterContentType: "cont",
