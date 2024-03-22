@@ -17,8 +17,8 @@ final class MainScreenController: UIViewController {
     @IBOutlet weak var mainButtonsView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
+        Analytics.logEvent("User on main screen", parameters: [:])
         fetchingCountries()
-        analytics()
     }
     
     override func viewDidLoad() {
@@ -106,11 +106,6 @@ final class MainScreenController: UIViewController {
     // Design for the border of the menu
     func setupUI() {
         mainButtonsView.layer.cornerRadius = 30
-    }
-    
-    //Analytics to know stats on the player's behavior
-    func analytics() {
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [:])
     }
 }
 

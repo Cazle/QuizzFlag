@@ -15,8 +15,8 @@ final class CountryDescriptionController: UIViewController {
     var countryToShow: CountryEntity?
     
     override func viewDidLoad() {
+        Analytics.logEvent("Description", parameters: [:])
         settingDescriptionPage()
-        analytics()
     }
     
     //Setting the infos on the screen
@@ -42,10 +42,5 @@ final class CountryDescriptionController: UIViewController {
         guard let url = URL(string: receivedUrl) else { return }
         
         UIApplication.shared.open(url)
-    }
-    
-    //Analytics to know stats on the player's behavior
-    func analytics() {
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [:])
     }
 }
